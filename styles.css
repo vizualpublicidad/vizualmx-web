@@ -2169,3 +2169,56 @@ footer img{
   }
 
 }
+
+/* SOCIAL ICONS — DESKTOP + GENERAL */
+
+.contact-links{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-top:24px;
+}
+
+.social-icon{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.28);
+  background:rgba(255,255,255,.07);
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.social-icon:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,.55);
+  background:rgba(255,255,255,.14);
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.social-icon svg{
+  width:20px;
+  height:20px;
+  stroke:#fff;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  opacity:.96;
+}
+
+.social-icon .fill-dot{
+  fill:#fff;
+  stroke:none;
+}
+
+.social-icon .inner-stroke{
+  stroke:#fff;
+  fill:none;
+}
