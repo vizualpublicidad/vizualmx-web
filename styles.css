@@ -1809,3 +1809,306 @@ footer img{
   }
 
 }
+
+/* =========================================================
+   MOBILE V2 — COMPOSICIÓN CENTRADA
+   ========================================================= */
+
+@media (max-width:640px){
+
+  /* CONTENEDOR GENERAL */
+  .section-pad{
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+
+  /* HEADER */
+  .site-header{
+    padding-left:24px;
+    padding-right:24px;
+  }
+
+
+  /* HERO */
+  .hero{
+    text-align:center;
+  }
+
+  .hero-copy{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .eyebrow{
+    justify-content:center;
+  }
+
+  .hero h1{
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-lead{
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions{
+    align-items:center;
+    justify-content:center;
+  }
+
+  .text-link{
+    text-align:center;
+  }
+
+  .hero-meta{
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .hero-meta div{
+    align-items:center;
+  }
+
+
+  /* IMAGEN / LOGO HERO */
+  .hero-art{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-panel{
+    left:20px;
+    right:20px;
+  }
+
+
+  /* TICKER */
+  .ticker{
+    width:100%;
+  }
+
+
+  /* SERVICIOS */
+  .services-head{
+    text-align:center;
+  }
+
+  .services-head > div:first-child{
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .services-side-tag{
+    justify-content:center;
+    align-items:center;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .services-side-tag p{
+    text-align:left;
+  }
+
+  .neon-grid{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .neon-card{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .service-icon{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .neon-card p{
+    max-width:300px;
+    padding-right:0;
+  }
+
+  .service-arrow{
+    position:relative;
+    right:auto;
+    bottom:auto;
+    margin-top:22px;
+  }
+
+
+  /* ENCABEZADOS GENERALES */
+  .section-heading,
+  .section-heading.horizontal{
+    text-align:center;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .section-heading.horizontal > div{
+    width:100%;
+  }
+
+  .section-heading.horizontal p{
+    max-width:460px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+
+  /* PROYECTOS */
+  .work-grid{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .project-copy{
+    text-align:center;
+    left:24px;
+    right:24px;
+  }
+
+  .project-copy h3{
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .project-badge{
+    left:50%;
+    transform:translateX(-50%);
+    white-space:nowrap;
+  }
+
+  .demo-note{
+    text-align:center;
+    max-width:460px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+
+  /* SHOWREEL */
+  .showreel{
+    text-align:center;
+  }
+
+  .reel-frame{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+
+  /* CLIENTES */
+  .clients{
+    text-align:center;
+  }
+
+  .logo-wall{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+
+  /* PROCESO */
+  .process{
+    text-align:center;
+  }
+
+  .process-list{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .process-row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:8px;
+    padding:30px 16px;
+  }
+
+  .process-row span{
+    margin:0;
+  }
+
+  .process-row h3{
+    margin:4px 0 6px;
+  }
+
+  .process-row p{
+    margin:0;
+    max-width:360px;
+  }
+
+
+  /* CONTACTO */
+  .contact{
+    text-align:center;
+  }
+
+  .contact-box{
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+  }
+
+  .contact-side{
+    margin-top:42px;
+  }
+
+  .contact-side p{
+    max-width:420px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .contact-links{
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+
+
+  /* FOOTER */
+  footer{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+  }
+
+  footer img{
+    margin:auto;
+  }
+
+  footer p{
+    text-align:center;
+    order:initial;
+  }
+
+  footer > a{
+    text-align:center;
+  }
+
+}
