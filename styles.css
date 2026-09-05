@@ -1820,6 +1820,22 @@ footer img{
   .section-pad{
     padding-left:24px;
     padding-right:24px;
+
+  .contact-links{
+  justify-content:center;
+  gap:16px;
+  margin-top:26px;
+}
+
+.social-icon{
+  width:48px;
+  height:48px;
+}
+
+.social-icon svg{
+  width:21px;
+  height:21px;
+}
   }
 
 
