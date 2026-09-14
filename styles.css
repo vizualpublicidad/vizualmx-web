@@ -2210,3 +2210,12 @@ html.clinic-popup-open{overflow:hidden}
   footer{padding-bottom:90px}
 }
 @media(prefers-reduced-motion:reduce){.clinic-popup[open]{animation:none}.clinic-cta,.whatsapp-float{transition:none}}
+
+/* Tap-to-highlight client logos without shifting the mobile grid. */
+@media (hover:none) and (pointer:coarse), (max-width:640px){
+  .client-logo[role="button"]{cursor:pointer;touch-action:manipulation}
+  .client-logo.is-expanded{background:rgba(255,255,255,.045)}
+  .client-logo.is-expanded img{transform:scale(1.15);opacity:1;filter:grayscale(0) brightness(1.02)}
+  .client-logo[role="button"]:focus-visible{outline:2px solid var(--cyan);outline-offset:-3px}
+}
+@media(prefers-reduced-motion:reduce){.client-logo img{transition:none}}
