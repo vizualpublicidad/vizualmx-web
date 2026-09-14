@@ -6,14 +6,14 @@
 
 *{box-sizing:border-box}
 
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 
 body{
   margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  overflow-x:hidden;
+  overflow-x:clip;
 }
 
 a{
@@ -1298,7 +1298,7 @@ footer img{
 @media (max-width:640px){
 
   body{
-    overflow-x:hidden;
+    overflow-x:clip;
   }
 
   .section-pad{
@@ -2183,7 +2183,7 @@ footer img{
 .clinic-endpoints>span:nth-child(2){color:var(--cyan);font-size:22px}
 .whatsapp-float{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:calc(24px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid #ffffff30;border-radius:999px;background:#10151af2;box-shadow:0 8px 30px #0005;font-size:12px;font-weight:600;transition:background .2s,border-color .2s}
 .whatsapp-float:hover{background:#17252a;border-color:var(--cyan)}
-.whatsapp-float svg{width:23px;height:23px;fill:none;stroke:var(--cyan);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.whatsapp-float svg{flex-shrink:0;width:23px;height:23px;fill:none;stroke:var(--cyan);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .clinic-popup{box-sizing:border-box;width:440px;max-width:calc(100% - 40px);max-height:calc(100dvh - 40px);padding:40px;border:1px solid #2df3e040;border-radius:26px;color:var(--text);background:radial-gradient(ellipse at top right,#163136,transparent 75%),#0d1116;box-shadow:0 30px 100px #0008;overflow:auto}
 .clinic-popup::backdrop{background:#03050799;backdrop-filter:blur(5px)}
 .clinic-popup[open]{animation:clinic-enter .25s ease-out}
@@ -2204,7 +2204,7 @@ html.clinic-popup-open{overflow:hidden}
   .clinic-subtitle{font-size:17px}.clinic-description{font-size:14px}
   .clinic-visual{padding:18px}.clinic-hub{padding:28px 0}.clinic-hub strong{font-size:24px}.clinic-hub>span{width:48px;height:48px;font-size:30px}
   .clinic-features>span{font-size:11px;gap:8px;padding:14px 10px}
-  .whatsapp-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));padding:13px}.whatsapp-float>span{display:none}
+  .whatsapp-float{right:calc(28px + env(safe-area-inset-right,0px));bottom:calc(24px + env(safe-area-inset-bottom,0px));width:52px;height:52px;padding:0;justify-content:center;transform:translateZ(0);touch-action:pan-y pinch-zoom}.whatsapp-float>span{display:none}
   .clinic-popup{inset:auto 0 0;margin:0;width:100%;max-width:none;max-height:85dvh;border-radius:24px 24px 0 0;padding:28px 24px calc(24px + env(safe-area-inset-bottom))}
   .clinic-popup h2{font-size:30px;margin:16px 0 12px}.clinic-popup h2 br{display:none}.clinic-popup p{font-size:13px;margin-bottom:12px}.clinic-popup .clinic-popup-product{margin-bottom:18px}
   footer{padding-bottom:90px}
