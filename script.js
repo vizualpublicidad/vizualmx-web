@@ -18,3 +18,60 @@ openBtn.addEventListener('click',()=>{modal.classList.add('open');modal.setAttri
 closeBtn.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
 modal.addEventListener('click',(e)=>{if(e.target===modal) closeBtn.click()});
 document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn.click()});
+
+// The first eligible trigger wins; storage is optional in private/restricted browsers.
+(() => {
+  const popup = document.getElementById('clinicPopup');
+  if (!popup || typeof popup.showModal !== 'function') return;
+  const sessionKey = 'vizual-clinic-promo-shown';
+  let shown = false;
+  try { shown = sessionStorage.getItem(sessionKey) === '1'; } catch (_) {}
+  if (shown) return;
+  let previousFocus;
+  let timer;
+  const stopTriggers = () => {
+    clearTimeout(timer);
+    window.removeEventListener('scroll', onScroll);
+    document.removeEventListener('visibilitychange', onVisibility);
+  };
+  const remember = () => {
+    shown = true;
+    try { sessionStorage.setItem(sessionKey, '1'); } catch (_) {}
+    stopTriggers();
+  };
+  const show = () => {
+    if (shown) return;
+    // Wait for an active tab and avoid interrupting another modal or text entry.
+    if (document.hidden || modal.classList.contains('open') || document.querySelector('dialog[open]') || document.activeElement.matches('input, textarea, select, [contenteditable="true"]')) {
+      clearTimeout(timer);
+      timer = setTimeout(show, 1000);
+      return;
+    }
+    previousFocus = document.activeElement;
+    popup.showModal();
+    document.documentElement.classList.add('clinic-popup-open');
+    remember();
+  };
+  function onScroll() {
+    const range = document.documentElement.scrollHeight - window.innerHeight;
+    if (range > 0 && window.scrollY / range >= 0.45) show();
+  }
+  function onVisibility() { if (!document.hidden) onScroll(); }
+  popup.querySelector('button').addEventListener('click', () => popup.close());
+  popup.addEventListener('click', event => {
+    const rect = popup.getBoundingClientRect();
+    if (event.target === popup && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) popup.close();
+  });
+  popup.addEventListener('close', () => {
+    document.documentElement.classList.remove('clinic-popup-open');
+    if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
+  });
+  // Asking for a demo directly also suppresses the automatic invitation.
+  document.querySelectorAll('.clinic-cta, .whatsapp-float').forEach(link => link.addEventListener('click', () => {
+    remember();
+    if (popup.open) popup.close();
+  }));
+  timer = setTimeout(show, 12000);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('visibilitychange', onVisibility);
+})();

@@ -2222,3 +2222,57 @@ footer img{
   stroke:#fff;
   fill:none;
 }
+
+/* Clinic product: shares the site's typography, surfaces and cyan accent. */
+.clinic{padding-top:30px;padding-bottom:60px}
+.clinic-card{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;gap:64px;padding:64px 54px;border:1px solid rgba(45,243,224,.22);border-radius:30px;background:radial-gradient(ellipse at 100% 0,rgba(45,243,224,.08),transparent 60%),linear-gradient(135deg,#10151a,#090b10);overflow:hidden}
+.clinic-copy,.clinic-visual{min-width:0}
+.clinic .kicker,.clinic-popup .kicker{color:var(--cyan);font-size:10px}
+.clinic h2{font-size:clamp(30px,3.1vw,46px);line-height:1.06;letter-spacing:-.045em;margin:24px 0}
+.clinic h2 span{display:block;margin-top:8px;color:var(--cyan)}
+.clinic-subtitle{font-size:19px;font-weight:600;line-height:1.45;margin-bottom:12px}
+.clinic-description{color:var(--muted);font-size:15px;line-height:1.7;margin-bottom:28px}
+.clinic-cta{background:var(--cyan);border-color:var(--cyan);gap:16px;line-height:1.4;text-align:center}
+.clinic-footnote{color:var(--muted);font-size:11px;margin:14px 0 0}
+.clinic-visual{border:1px solid var(--line);border-radius:22px;padding:24px;background:linear-gradient(160deg,rgba(255,255,255,.04),rgba(255,255,255,.01));box-shadow:0 30px 60px #0004}
+.clinic-visual-top{display:flex;align-items:center;gap:7px;font-size:8px;letter-spacing:.1em;color:var(--muted)}
+.clinic-visual-top>span:last-child{margin-left:auto;color:var(--text)}
+.clinic-status{width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+.clinic-hub{display:flex;align-items:center;gap:18px;padding:42px 0 32px}
+.clinic-hub>span{display:grid;place-items:center;flex-shrink:0;width:64px;height:64px;border:1px solid #2df3e044;border-radius:18px;color:var(--cyan);font-size:38px;background:#2df3e009}
+.clinic-hub strong{font-size:27px;line-height:1.15;letter-spacing:-.04em}
+.clinic-features{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.clinic-features>span{display:flex;gap:12px;align-items:center;padding:17px 12px;border:1px solid var(--line);border-radius:12px;font-size:13px}
+.clinic-features i{font-size:9px;color:var(--cyan);font-style:normal}
+.clinic-endpoints{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:8px;letter-spacing:.07em;line-height:1.8}
+.clinic-endpoints b{font-size:11px;color:var(--text)}
+.clinic-endpoints>span:nth-child(2){color:var(--cyan);font-size:22px}
+.whatsapp-float{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:calc(24px + env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:10px;padding:13px 18px;border:1px solid #ffffff30;border-radius:999px;background:#10151af2;box-shadow:0 8px 30px #0005;font-size:12px;font-weight:600;transition:background .2s,border-color .2s}
+.whatsapp-float:hover{background:#17252a;border-color:var(--cyan)}
+.whatsapp-float svg{width:23px;height:23px;fill:none;stroke:var(--cyan);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.clinic-popup{box-sizing:border-box;width:440px;max-width:calc(100% - 40px);max-height:calc(100dvh - 40px);padding:40px;border:1px solid #2df3e040;border-radius:26px;color:var(--text);background:radial-gradient(ellipse at top right,#163136,transparent 75%),#0d1116;box-shadow:0 30px 100px #0008;overflow:auto}
+.clinic-popup::backdrop{background:#03050799;backdrop-filter:blur(5px)}
+.clinic-popup[open]{animation:clinic-enter .25s ease-out}
+.clinic-popup-close{position:absolute;right:12px;top:10px;display:grid;place-items:center;width:44px;height:44px;border:0;border-radius:50%;background:transparent;color:#c6cdd2;font-size:28px;cursor:pointer}
+.clinic-popup-close:hover{background:#ffffff0a;color:white}
+.clinic-popup h2{font-size:42px;line-height:1.02;letter-spacing:-.045em;margin:24px 0 18px}
+.clinic-popup p{font-size:14px;line-height:1.6;color:var(--muted)}
+.clinic-popup .clinic-popup-product{color:var(--text);font-weight:600;margin-bottom:25px}
+.clinic-popup .btn{width:100%;font-size:12px;padding:15px}
+.clinic-cta:focus-visible,.whatsapp-float:focus-visible,.clinic-popup-close:focus-visible{outline:2px solid white;outline-offset:5px}
+html.clinic-popup-open{overflow:hidden}
+@keyframes clinic-enter{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:980px){.clinic-card{grid-template-columns:1fr;gap:40px;padding:40px}.clinic-visual{width:100%;max-width:470px;margin:auto}.clinic-copy{max-width:600px}.clinic h2{font-size:42px}}
+@media(max-width:640px){
+  .clinic{padding-top:20px;padding-bottom:35px}
+  .clinic-card{padding:30px 22px;gap:32px;border-radius:24px}
+  .clinic h2{font-size:clamp(27px,7.5vw,38px);margin-top:20px}
+  .clinic-subtitle{font-size:17px}.clinic-description{font-size:14px}
+  .clinic-visual{padding:18px}.clinic-hub{padding:28px 0}.clinic-hub strong{font-size:24px}.clinic-hub>span{width:48px;height:48px;font-size:30px}
+  .clinic-features>span{font-size:11px;gap:8px;padding:14px 10px}
+  .whatsapp-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom));padding:13px}.whatsapp-float>span{display:none}
+  .clinic-popup{inset:auto 0 0;margin:0;width:100%;max-width:none;max-height:85dvh;border-radius:24px 24px 0 0;padding:28px 24px calc(24px + env(safe-area-inset-bottom))}
+  .clinic-popup h2{font-size:30px;margin:16px 0 12px}.clinic-popup h2 br{display:none}.clinic-popup p{font-size:13px;margin-bottom:12px}.clinic-popup .clinic-popup-product{margin-bottom:18px}
+  footer{padding-bottom:90px}
+}
+@media(prefers-reduced-motion:reduce){.clinic-popup[open]{animation:none}.clinic-cta,.whatsapp-float{transition:none}}
