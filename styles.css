@@ -2219,3 +2219,11 @@ html.clinic-popup-open{overflow:hidden}
   .client-logo[role="button"]:focus-visible{outline:2px solid var(--cyan);outline-offset:-3px}
 }
 @media(prefers-reduced-motion:reduce){.client-logo img{transition:none}}
+
+/* Six services: balanced rows on desktop, stacked cards on mobile. */
+@media(min-width:1181px){.neon-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+a.neon-card{display:block}
+a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.app-icon{--icon-accent:#c0a0ff}
+.dashboard-icon{--icon-accent:var(--lime)}
+@media(max-width:640px){a.neon-card{display:flex}}
