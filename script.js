@@ -14,10 +14,10 @@ document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const modal = document.getElementById('demoModal');
 const openBtn = document.getElementById('playDemo');
 const closeBtn = document.getElementById('closeModal');
-openBtn.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false')});
-closeBtn.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
-modal.addEventListener('click',(e)=>{if(e.target===modal) closeBtn.click()});
-document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn.click()});
+openBtn?.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false')});
+closeBtn?.addEventListener('click',()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')});
+modal?.addEventListener('click',(e)=>{if(e.target===modal) closeBtn?.click()});
+document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn?.click()});
 
 // The first eligible trigger wins; storage is optional in private/restricted browsers.
 (() => {
@@ -117,4 +117,28 @@ document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn.click()}
   });
   mobileLogos.addEventListener('change', update);
   update();
+})();
+
+// A disclosure menu: no scroll lock, with keyboard and outside-click dismissal.
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.getElementById('main-nav');
+  if (!toggle || !nav) return;
+  toggle.hidden = false;
+  document.documentElement.classList.add('has-mobile-menu');
+  const close = () => { toggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  });
+  nav.addEventListener('click', event => { if (event.target.closest('a')) close(); });
+  document.addEventListener('click', event => {
+    if (!nav.contains(event.target) && !toggle.contains(event.target)) close();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { close(); toggle.focus(); }
+  });
+  nav.addEventListener('focusout', event => { if (!nav.contains(event.relatedTarget) && event.relatedTarget !== toggle) close(); });
+  window.matchMedia('(max-width: 980px)').addEventListener('change', close);
 })();

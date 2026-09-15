@@ -2227,3 +2227,64 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .app-icon{--icon-accent:#c0a0ff}
 .dashboard-icon{--icon-accent:var(--lime)}
 @media(max-width:640px){a.neon-card{display:flex}}
+
+/* Contact and mobile navigation shared by the agency and clinic pages. */
+.menu-toggle{display:none}
+.contact-email{display:block;width:fit-content;margin-top:20px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.clinic-detail-link{display:block;width:fit-content;margin-top:20px;color:var(--cyan);font-size:13px;line-height:1.6}
+.clinic-popup .clinic-detail-link{margin:0 0 20px}
+.skip-link{position:absolute;left:20px;top:-100px;z-index:100;background:white;color:black;padding:12px}
+.skip-link:focus{top:10px}
+.clinic-page .clinic-landing-hero{padding-top:50px}
+.clinic-page h1{font-size:clamp(30px,3.1vw,46px);line-height:1.06;letter-spacing:-.045em;margin:24px 0}
+.clinic-page h1 span{display:block;margin-top:8px;color:var(--cyan)}
+.clinic-back{font-size:10px;letter-spacing:.15em;color:var(--muted)}
+.clinic-content{padding-top:70px;padding-bottom:70px;scroll-margin-top:20px}
+.clinic-function-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.clinic-info-card{padding:28px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,#101b20,#0b0d10)}
+.clinic-info-card .kicker{color:var(--cyan)}
+.clinic-info-card h3{font-size:24px;margin:24px 0 12px}
+.clinic-info-card p,.clinic-steps p,.clinic-support p,.clinic-faq p,.clinic-demo p{color:var(--muted);font-size:16px;line-height:1.7;margin-bottom:0}
+.clinic-steps{list-style:none;padding:0;margin:0}
+.clinic-steps li{display:flex;gap:30px;border-top:1px solid var(--line);padding:30px 0}
+.clinic-steps li>span{color:var(--cyan);font-size:13px;padding-top:7px}
+.clinic-steps h3{font-size:26px;margin:0 0 10px}
+.clinic-support{display:grid;grid-template-columns:1fr 1fr;gap:50px;border:1px solid var(--line);border-radius:26px;padding:44px;background:radial-gradient(ellipse at top left,#2df3e012,transparent),var(--bg2)}
+.clinic-support h2,.clinic-demo h2{font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.04em;margin:20px 0}
+.clinic-support p{margin-bottom:18px}
+.clinic-support .text-link{color:var(--cyan)}
+.clinic-faq details{border-top:1px solid var(--line);padding:22px 0}
+.clinic-faq summary{cursor:pointer;font-size:18px;font-weight:600;line-height:1.5;padding-right:12px}
+.clinic-faq p{max-width:850px;margin:16px 0 0}
+.clinic-demo{padding:60px 32px;text-align:center;border-radius:30px;border:1px solid #2df3e040;background:radial-gradient(ellipse at top,#18373c,transparent),#0b0d10}
+.clinic-demo p{max-width:640px;margin:0 auto 28px}
+.clinic-demo .contact-email{margin:22px auto 0}
+.clinic-page a:focus-visible,.menu-toggle:focus-visible,.clinic-faq summary:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+@media(max-width:980px){
+  .site-header{gap:12px;flex-wrap:wrap;height:auto;min-height:86px;padding-top:14px;padding-bottom:14px}
+  .brand{margin-right:auto}
+  .has-mobile-menu .menu-toggle{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:11px 14px;background:var(--bg2);color:var(--text);font-size:13px;min-height:44px;cursor:pointer}
+  .has-mobile-menu .nav{display:none;position:absolute;top:calc(100% - 2px);left:24px;right:24px;padding:12px;background:#10151a;border:1px solid #ffffff25;border-radius:18px;box-shadow:0 20px 50px #0008;z-index:30}
+  .has-mobile-menu .nav.is-open{display:flex;flex-direction:column;gap:0}
+  .has-mobile-menu .nav a{padding:14px 16px;border-radius:10px}
+  .has-mobile-menu .nav a:hover{background:#ffffff08}
+  html:not(.has-mobile-menu) .nav{display:flex;order:4;flex-basis:100%;flex-wrap:wrap;gap:16px;padding:16px 0}
+  .header-contact{min-height:44px}
+  .clinic-function-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .clinic-support{grid-template-columns:1fr;gap:12px}
+}
+@media(max-width:640px){
+  .site-header{gap:8px;padding-left:16px;padding-right:16px;min-height:78px}
+  .site-header .brand img{width:100px}
+  .header-contact{font-size:11px;padding:10px 12px}
+  .has-mobile-menu .menu-toggle{font-size:12px;padding:10px 12px}
+  .contact-side .contact-email{margin-left:auto;margin-right:auto}
+  .clinic-page .clinic-landing-hero{padding-top:30px}
+  .clinic-page h1{font-size:clamp(27px,7.5vw,38px)}
+  .clinic-content{padding-top:44px;padding-bottom:44px}
+  .clinic-function-grid{grid-template-columns:1fr}
+  .clinic-info-card{padding:26px}.clinic-info-card h3{margin-top:18px}
+  .clinic-steps li{gap:18px}.clinic-steps h3{font-size:23px}
+  .clinic-support{padding:28px}.clinic-demo{padding:38px 22px}
+  .clinic-faq summary{font-size:16px}
+}
