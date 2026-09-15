@@ -160,13 +160,11 @@
           <a class="btn clinic-cta" href="https://wa.me/526861992711?text=Hola%2C%20me%20interesa%20la%20app%20para%20pacientes%20%2B%20dashboard%20para%20mi%20cl%C3%ADnica.%20Quisiera%20solicitar%20una%20demo." target="_blank" rel="noopener noreferrer">SOLICITAR DEMO <span aria-hidden="true">↗</span></a>
           <a class="clinic-detail-link" href="/sistema-para-clinicas">Explorar el sistema para clínicas <span aria-hidden="true">→</span></a>
         </div>
-        <!-- Replace .clinic-visual contents with real app screenshots when available. -->
-        <div class="clinic-visual" aria-label="App para pacientes y dashboard conectados en un solo sistema">
-          <div class="clinic-visual-top"><span class="clinic-status"></span> UN SOLO SISTEMA <span>VIZUAL ↗</span></div>
-          <div class="clinic-hub"><span aria-hidden="true">✦</span><strong>Tu clínica.<br>Todo conectado.</strong></div>
-          <div class="clinic-features"><span><i aria-hidden="true">01</i>Citas</span><span><i aria-hidden="true">02</i>Pacientes</span><span><i aria-hidden="true">03</i>Agenda</span><span><i aria-hidden="true">04</i>Chat</span></div>
-          <div class="clinic-endpoints"><span>APP PARA<br><b>PACIENTES</b></span><span aria-hidden="true">↔</span><span>DASHBOARD PARA<br><b>TU CLÍNICA</b></span></div>
-        </div>
+        <a class="clinic-reel-preview" href="assets/projects/clinic-reel.mp4" data-video-project aria-controls="clinic-reel-dialog" aria-haspopup="dialog" aria-label="Reproducir reel de la app y dashboard">
+  <img src="assets/projects/clinic-reel-poster.jpg" alt="Vista del dashboard de la clínica en el reel de VIZUAL" width="720" height="1280" loading="lazy" />
+  <span class="clinic-reel-play" aria-hidden="true">▷</span>
+  <span class="clinic-reel-caption"><strong>App + Dashboard</strong><span>Ver reel · 20 segundos</span></span>
+</a>
       </div>
     </section>
 
@@ -321,6 +319,10 @@
     <div class="project-video-header"><h2 id="sleepy-title">SLEEPY <span>Producción audiovisual</span></h2><button type="button" class="project-video-close" aria-label="Cerrar video" autofocus>×</button></div>
     <video controls playsinline preload="none" poster="assets/projects/sleepy-poster.jpg"><source src="assets/projects/sleepy.mp4" type="video/mp4" />Tu navegador no puede reproducir este video. <a href="assets/projects/sleepy.mp4">Abrir SLEEPY</a>.</video>
   </dialog>
-  <script src="script.js"></script>
+  <dialog class="project-video-dialog" id="clinic-reel-dialog" aria-labelledby="clinic-reel-title">
+<div class="project-video-header"><h2 id="clinic-reel-title">App + Dashboard <span>Sistema para clínicas · VIZUAL</span></h2><button type="button" class="project-video-close" aria-label="Cerrar reel de la app" autofocus>×</button></div>
+<video controls playsinline preload="none" poster="assets/projects/clinic-reel-poster.jpg"><source src="assets/projects/clinic-reel.mp4" type="video/mp4" />Tu navegador no puede reproducir este video. <a href="assets/projects/clinic-reel.mp4">Abrir reel</a>.</video>
+</dialog>
+<script src="script.js"></script>
 </body>
 </html>

@@ -143,9 +143,8 @@ document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn?.click()
   window.matchMedia('(max-width: 980px)').addEventListener('change', close);
 })();
 
-(() => {
-  const dialog = document.getElementById('sleepy-dialog');
-  const trigger = document.querySelector('[data-video-project]');
+document.querySelectorAll('[data-video-project]').forEach(trigger => {
+  const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
   if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
   const video = dialog.querySelector('video');
   trigger.addEventListener('click', event => {
@@ -160,4 +159,4 @@ document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn?.click()
   });
   dialog.addEventListener('close', () => { video.pause(); trigger.focus({ preventScroll: true }); });
   document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
-})();
+});

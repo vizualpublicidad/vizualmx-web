@@ -2302,3 +2302,13 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .project-video-close{flex-shrink:0;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:white;font-size:28px;cursor:pointer}
 .project-video-close:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 .project-video-dialog video{display:block;width:100%;max-height:calc(100dvh - 110px);aspect-ratio:9/16;background:#000;border-radius:10px;object-fit:contain}
+
+.clinic-reel-preview{position:relative;display:block;width:min(100%,300px);aspect-ratio:9/16;margin:auto;overflow:hidden;border:1px solid #ffffff30;border-radius:24px;background:#10151a;box-shadow:0 24px 60px #0005}
+.clinic-reel-preview img{display:block;width:100%;height:100%;object-fit:cover}
+.clinic-reel-preview::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#030507e6);pointer-events:none}
+.clinic-reel-play{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);z-index:1;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;border:1px solid #ffffff99;background:#071317cc;color:var(--cyan);font-size:36px}
+.clinic-reel-caption{position:absolute;bottom:24px;left:24px;right:24px;z-index:1;color:white;text-align:left}
+.clinic-reel-caption strong{display:block;font-size:23px;letter-spacing:-.03em}
+.clinic-reel-caption>span{display:block;font-size:13px;margin-top:6px;color:#e0e8eb}
+.clinic-reel-preview:hover .clinic-reel-play{background:#071317;color:white}
+.clinic-reel-preview:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}
