@@ -142,3 +142,22 @@ document.addEventListener('keydown',(e)=>{if(e.key==='Escape') closeBtn?.click()
   nav.addEventListener('focusout', event => { if (!nav.contains(event.relatedTarget) && event.relatedTarget !== toggle) close(); });
   window.matchMedia('(max-width: 980px)').addEventListener('change', close);
 })();
+
+(() => {
+  const dialog = document.getElementById('sleepy-dialog');
+  const trigger = document.querySelector('[data-video-project]');
+  if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
+  const video = dialog.querySelector('video');
+  trigger.addEventListener('click', event => {
+    event.preventDefault();
+    dialog.showModal();
+    video.play().catch(() => { /* Native controls remain available. */ });
+  });
+  dialog.querySelector('button').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+  });
+  dialog.addEventListener('close', () => { video.pause(); trigger.focus({ preventScroll: true }); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
+})();

@@ -2288,3 +2288,17 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
   .clinic-support{padding:28px}.clinic-demo{padding:38px 22px}
   .clinic-faq summary{font-size:16px}
 }
+
+/* Real portfolio footage, loaded on demand and shown at its original ratio. */
+.project-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.project-sleepy::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0005,transparent 35%,#000c);pointer-events:none}
+.project-sleepy .project-badge,.project-sleepy .project-copy{z-index:1}
+.project-sleepy:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+.project-video-dialog{width:min(480px,calc(100vw - 24px));max-width:none;max-height:calc(100dvh - 24px);padding:12px;border:1px solid #ffffff30;border-radius:20px;background:#0b0d10;color:var(--text);overflow:auto;box-shadow:0 25px 80px #0009}
+.project-video-dialog::backdrop{background:#030507df}
+.project-video-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.project-video-header h2{font-size:15px;letter-spacing:.02em;margin:0}
+.project-video-header h2 span{display:block;color:var(--muted);font-size:11px;font-weight:400;margin-top:4px}
+.project-video-close{flex-shrink:0;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:white;font-size:28px;cursor:pointer}
+.project-video-close:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.project-video-dialog video{display:block;width:100%;max-height:calc(100dvh - 110px);aspect-ratio:9/16;background:#000;border-radius:10px;object-fit:contain}
