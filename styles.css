@@ -2312,3 +2312,14 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .clinic-reel-caption>span{display:block;font-size:13px;margin-top:6px;color:#e0e8eb}
 .clinic-reel-preview:hover .clinic-reel-play{background:#071317;color:white}
 .clinic-reel-preview:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}
+
+.project-datomico::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0008,transparent 30%,#000e);pointer-events:none}
+.project-datomico .project-badge,.project-datomico .project-copy{z-index:1}
+.project-datomico .project-cover{object-position:center 43%}
+.project-datomico .project-badge{color:#ffe06b;font-size:9px;letter-spacing:.08em}
+.project-datomico:focus-visible{outline:2px solid #ffe06b;outline-offset:4px}
+#datomico-dialog video{max-height:calc(100dvh - 220px)}
+ .datomico-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;padding-top:12px}
+.datomico-links a{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #ffe06b30;border-radius:8px;color:#ffe06b;font-size:12px}
+.datomico-links a:hover{background:#ffe06b10}
+.datomico-links a:focus-visible{outline:2px solid #ffe06b;outline-offset:2px}
