@@ -46,11 +46,13 @@
         </div>
       </div>
 
-      <div class="hero-art reveal delay-1" aria-hidden="true">
+      <div class="hero-art hero-art-loop reveal delay-1">
         <div class="orb orb-a"></div>
         <div class="orb orb-b"></div>
-        <div class="hero-panel">
-          <img src="assets/vizual-logo-color.png" alt="" />
+        <div class="hero-panel hero-loop-panel">
+          <img class="hero-loop-fallback" src="assets/hero/vizual-loop-poster.jpg" width="720" height="720" alt="VIZUAL, animación de identidad visual" />
+          <video class="hero-loop-video" data-src="assets/hero/vizual-loop.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+          <button class="hero-loop-control" type="button" aria-label="Pausar animación" hidden>Pausar ⏸</button>
           <div class="panel-label">CREATIVE DIRECTION</div>
         </div>
         <div class="float-card card-a"><span>01</span> BRANDING</div>
@@ -333,6 +335,6 @@
 <a href="https://www.youtube.com/@DatomicoTV" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
 </nav>
 </dialog>
-<script src="script.js"></script>
+<script src="script.js?v=hero-loop-1"></script>
 </body>
 </html>

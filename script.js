@@ -160,3 +160,42 @@ document.querySelectorAll('[data-video-project]').forEach(trigger => {
   dialog.addEventListener('close', () => { video.pause(); trigger.focus({ preventScroll: true }); });
   document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
 });
+
+// Respect reduced motion/data and avoid decoding animation off screen.
+(() => {
+  const video = document.querySelector('.hero-loop-video');
+  if (!video) return;
+  const panel = video.closest('.hero-loop-panel');
+  const control = panel.querySelector('.hero-loop-control');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const connection = navigator.connection;
+  let visible = false;
+  let manuallyPaused = false;
+  let failed = false;
+  const update = () => {
+    const restricted = reducedMotion.matches || connection?.saveData || failed;
+    control.hidden = !!restricted;
+    if (restricted) panel.classList.remove('has-video');
+    if (restricted || manuallyPaused || !visible || document.hidden) { video.pause(); return; }
+    if (!video.hasAttribute('src')) video.src = video.dataset.src;
+    video.muted = true;
+    video.play().catch(() => {
+      if (!video.paused || !visible || document.hidden) return;
+      manuallyPaused = true;
+      control.textContent = 'Reproducir ▷';
+      control.setAttribute('aria-label', 'Reproducir animación');
+    });
+  };
+  video.addEventListener('playing', () => panel.classList.add('has-video'));
+  video.addEventListener('error', () => { failed = true; update(); });
+  control.addEventListener('click', () => {
+    manuallyPaused = !manuallyPaused;
+    control.textContent = manuallyPaused ? 'Reproducir ▷' : 'Pausar ⏸';
+    control.setAttribute('aria-label', manuallyPaused ? 'Reproducir animación' : 'Pausar animación');
+    update();
+  });
+  new IntersectionObserver(entries => { visible = entries[0].isIntersecting; update(); }, { threshold:0.05 }).observe(panel);
+  document.addEventListener('visibilitychange', update);
+  reducedMotion.addEventListener('change', update);
+  connection?.addEventListener('change', update);
+})();
