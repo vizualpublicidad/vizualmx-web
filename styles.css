@@ -2338,3 +2338,25 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .hero-art-loop .float-card{z-index:5;pointer-events:none}
 @media(max-width:980px){.hero-art-loop{width:100%;max-width:520px;margin-left:auto;margin-right:auto}}
 @media(max-width:640px){.hero-art-loop{height:auto;aspect-ratio:1/1}.hero-art-loop .hero-loop-panel{inset:0}.hero-loop-panel .panel-label{left:14px;font-size:7px;max-width:48%}}
+
+/* Enterprise infrastructure service */
+.enterprise-shell{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;max-width:var(--max);margin:auto}
+.enterprise-overview .enterprise-shell{border:1px solid var(--line);border-radius:32px;padding:52px;background:radial-gradient(ellipse at 100% 0%,#2df3e010,transparent 65%),#0b0d10}
+.enterprise-shell h1,.enterprise-shell h2,.enterprise-end h2{font-size:clamp(34px,4.2vw,62px);line-height:1.07;letter-spacing:-.045em;margin:24px 0}
+.enterprise-shell h1 span,.enterprise-shell h2 span,.enterprise-end h2 span{color:var(--cyan)}
+.enterprise-shell p,.enterprise-service p,.enterprise-steps p,.enterprise-faq p,.enterprise-end p{color:var(--muted);line-height:1.75;font-size:16px;max-width:620px}
+.enterprise-shell .enterprise-note{font-size:13px;margin-top:22px}
+.enterprise-actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:28px}
+.enterprise-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0}
+.enterprise-tags li{border:1px solid var(--line);border-radius:30px;padding:8px 12px;font-size:12px;color:#d1d9da}
+.enterprise-map{padding:30px;border:1px solid #2df3e02b;border-radius:24px;background:linear-gradient(145deg,#111d20,#090b10);box-shadow:0 24px 60px #0004;text-align:center}
+.enterprise-map-label{font-size:9px;letter-spacing:.14em;color:var(--cyan)}
+.enterprise-map-center{margin:28px auto;padding:22px 15px;border:1px solid #2df3e05c;border-radius:16px;max-width:250px;font-size:18px;font-weight:700;background:#2df3e008}
+.enterprise-map small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:8px}
+.enterprise-map-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.enterprise-map-grid>span{padding:17px 8px;background:#ffffff04;border:1px solid var(--line);border-radius:14px;color:var(--cyan);font-size:26px}.enterprise-map strong{display:block;font-size:14px;color:var(--text);margin-top:7px}.enterprise-map p{font-size:12px;margin:22px 0 0}
+.enterprise-services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.enterprise-service{border:1px solid var(--line);border-radius:20px;background:#0c0e12;padding:30px}.enterprise-service h3{font-size:22px;margin:22px 0 12px}.enterprise-service p{font-size:14px;margin:0}
+.enterprise-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);padding:0;gap:26px}.enterprise-steps li{border-top:1px solid #2df3e04d;padding-top:24px}.enterprise-steps b{color:var(--cyan);font-size:15px}.enterprise-steps p{font-size:14px}
+.enterprise-faq details{border-bottom:1px solid var(--line);padding:23px 0}.enterprise-faq summary{cursor:pointer;font-weight:600;font-size:18px}.enterprise-faq p{max-width:850px;font-size:15px}
+.enterprise-end{background:linear-gradient(125deg,#102524,#0b0d11);border:1px solid #2df3e030;border-radius:28px;padding:48px}.enterprise-end .btn{margin-top:20px}.enterprise-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+@media(max-width:1000px){.enterprise-shell{gap:30px}.enterprise-overview .enterprise-shell{padding:32px}.enterprise-services{grid-template-columns:repeat(2,1fr)}.enterprise-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.enterprise-shell{grid-template-columns:1fr}.enterprise-overview .enterprise-shell{padding:25px 20px;border-radius:22px}.enterprise-services,.enterprise-steps{grid-template-columns:1fr}.enterprise-map{padding:22px 16px}.enterprise-end{padding:30px 22px}.enterprise-actions .btn{width:100%;text-align:center}.enterprise-hero h1{font-size:40px}}
