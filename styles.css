@@ -2368,3 +2368,17 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .enterprise-page .enterprise-map,.enterprise-page .enterprise-end{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),radial-gradient(circle at 15% 18%,rgba(45,243,224,.09),transparent 38%),radial-gradient(circle at 72% 0%,rgba(232,43,215,.10),transparent 34%),linear-gradient(180deg,rgba(5,6,8,.88),rgba(8,10,14,.95));border-color:rgba(150,223,255,.2);box-shadow:inset 0 0 0 1px #ffffff08,0 18px 40px #00000038}
 footer>a:first-child{flex-shrink:0}
 @media(max-width:640px){.enterprise-services .neon-card{padding-bottom:26px}.enterprise-services .service-arrow{margin-top:20px}}
+
+/* Shared navigation: individual brand accents and a quiet underline reveal. */
+.nav>a{--nav-accent:var(--cyan);position:relative;transition:color .22s ease;text-decoration:none}
+.nav>a:nth-child(6n+2){--nav-accent:var(--magenta)}
+.nav>a:nth-child(6n+3){--nav-accent:var(--lime)}
+.nav>a:nth-child(6n+4){--nav-accent:#b28aff}
+.nav>a:nth-child(6n+5){--nav-accent:#5f8aff}
+.nav>a:nth-child(6n+6){--nav-accent:#6dffe6}
+.nav>a::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:999px;background:var(--nav-accent);box-shadow:0 3px 12px color-mix(in srgb,var(--nav-accent) 28%,transparent);transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .2s ease;pointer-events:none}
+.nav>a:hover,.nav>a:focus-visible{color:var(--nav-accent)}
+.nav>a:hover::after,.nav>a:focus-visible::after{transform:scaleX(1);opacity:1}
+.nav>a:focus-visible{outline:2px solid var(--nav-accent);outline-offset:12px;border-radius:2px}
+@media(max-width:980px){.has-mobile-menu .nav>a::after{left:16px;right:16px;bottom:6px}.has-mobile-menu .nav>a:focus-visible{outline-offset:-3px}}
+@media(prefers-reduced-motion:reduce){.nav>a,.nav>a::after{transition:none}}
