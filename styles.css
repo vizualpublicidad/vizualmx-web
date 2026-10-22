@@ -2338,3 +2338,124 @@ a.neon-card:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
 .hero-art-loop .float-card{z-index:5;pointer-events:none}
 @media(max-width:980px){.hero-art-loop{width:100%;max-width:520px;margin-left:auto;margin-right:auto}}
 @media(max-width:640px){.hero-art-loop{height:auto;aspect-ratio:1/1}.hero-art-loop .hero-loop-panel{inset:0}.hero-loop-panel .panel-label{left:14px;font-size:7px;max-width:48%}}
+
+/* Enterprise infrastructure service */
+.enterprise-shell{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;max-width:var(--max);margin:auto}
+.enterprise-overview .enterprise-shell{border:1px solid var(--line);border-radius:32px;padding:52px;background:radial-gradient(ellipse at 100% 0%,#2df3e010,transparent 65%),#0b0d10}
+.enterprise-shell h1,.enterprise-shell h2,.enterprise-end h2{font-size:clamp(34px,4.2vw,62px);line-height:1.07;letter-spacing:-.045em;margin:24px 0}
+.enterprise-shell h1 span,.enterprise-shell h2 span,.enterprise-end h2 span{color:var(--cyan)}
+.enterprise-shell p,.enterprise-service p,.enterprise-steps p,.enterprise-faq p,.enterprise-end p{color:var(--muted);line-height:1.75;font-size:16px;max-width:620px}
+.enterprise-shell .enterprise-note{font-size:13px;margin-top:22px}
+.enterprise-actions{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:28px}
+.enterprise-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:24px 0}
+.enterprise-tags li{border:1px solid var(--line);border-radius:30px;padding:8px 12px;font-size:12px;color:#d1d9da}
+.enterprise-map{padding:30px;border:1px solid #2df3e02b;border-radius:24px;background:linear-gradient(145deg,#111d20,#090b10);box-shadow:0 24px 60px #0004;text-align:center}
+.enterprise-map-label{font-size:9px;letter-spacing:.14em;color:var(--cyan)}
+.enterprise-map-center{margin:28px auto;padding:22px 15px;border:1px solid #2df3e05c;border-radius:16px;max-width:250px;font-size:18px;font-weight:700;background:#2df3e008}
+.enterprise-map small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:8px}
+.enterprise-map-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.enterprise-map-grid>span{padding:17px 8px;background:#ffffff04;border:1px solid var(--line);border-radius:14px;color:var(--cyan);font-size:26px}.enterprise-map strong{display:block;font-size:14px;color:var(--text);margin-top:7px}.enterprise-map p{font-size:12px;margin:22px 0 0}
+
+.enterprise-steps{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);padding:0;gap:26px}.enterprise-steps li{border-top:1px solid #2df3e04d;padding-top:24px}.enterprise-steps b{color:var(--cyan);font-size:15px}.enterprise-steps p{font-size:14px}
+.enterprise-faq details{border-bottom:1px solid var(--line);padding:23px 0}.enterprise-faq summary{cursor:pointer;font-weight:600;font-size:18px}.enterprise-faq p{max-width:850px;font-size:15px}
+.enterprise-end{background:linear-gradient(125deg,#102524,#0b0d11);border:1px solid #2df3e030;border-radius:28px;padding:48px}.enterprise-end .btn{margin-top:20px}
+@media(max-width:1000px){.enterprise-shell{gap:30px}.enterprise-overview .enterprise-shell{padding:32px}.enterprise-services{grid-template-columns:repeat(2,1fr)}.enterprise-steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.enterprise-shell{grid-template-columns:1fr}.enterprise-overview .enterprise-shell{padding:25px 20px;border-radius:22px}.enterprise-services,.enterprise-steps{grid-template-columns:1fr}.enterprise-map{padding:22px 16px}.enterprise-end{padding:30px 22px}.enterprise-actions .btn{width:100%;text-align:center}.enterprise-hero h1{font-size:40px}}
+
+/* Enterprises reuses the agency's neon surfaces, ambient lights and footer. */
+.enterprise-services .neon-card p{max-width:none;padding-right:0;line-height:1.6}
+.enterprise-services .neon-card{padding-bottom:78px}
+.enterprise-page .enterprise-shell{position:relative;z-index:1}
+.enterprise-page .enterprise-map,.enterprise-page .enterprise-end{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),radial-gradient(circle at 15% 18%,rgba(45,243,224,.09),transparent 38%),radial-gradient(circle at 72% 0%,rgba(232,43,215,.10),transparent 34%),linear-gradient(180deg,rgba(5,6,8,.88),rgba(8,10,14,.95));border-color:rgba(150,223,255,.2);box-shadow:inset 0 0 0 1px #ffffff08,0 18px 40px #00000038}
+footer>a:first-child{flex-shrink:0}
+@media(max-width:640px){.enterprise-services .neon-card{padding-bottom:26px}.enterprise-services .service-arrow{margin-top:20px}}
+
+/* Shared navigation: individual brand accents and a quiet underline reveal. */
+.nav>a{--nav-accent:var(--cyan);position:relative;transition:color .22s ease;text-decoration:none}
+.nav>a:nth-child(6n+2){--nav-accent:var(--magenta)}
+.nav>a:nth-child(6n+3){--nav-accent:var(--lime)}
+.nav>a:nth-child(6n+4){--nav-accent:#b28aff}
+.nav>a:nth-child(6n+5){--nav-accent:#5f8aff}
+.nav>a:nth-child(6n+6){--nav-accent:#6dffe6}
+.nav>a::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;border-radius:999px;background:var(--nav-accent);box-shadow:0 3px 12px color-mix(in srgb,var(--nav-accent) 28%,transparent);transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .2s ease;pointer-events:none}
+.nav>a:hover,.nav>a:focus-visible{color:var(--nav-accent)}
+.nav>a:hover::after,.nav>a:focus-visible::after{transform:scaleX(1);opacity:1}
+.nav>a:focus-visible{outline:2px solid var(--nav-accent);outline-offset:12px;border-radius:2px}
+@media(max-width:980px){.has-mobile-menu .nav>a::after{left:16px;right:16px;bottom:6px}.has-mobile-menu .nav>a:focus-visible{outline-offset:-3px}}
+@media(prefers-reduced-motion:reduce){.nav>a,.nav>a::after{transition:none}}
+
+/* VIZUAL Business Solutions — keeps the existing dark palette and visual language. */
+.business-page .reveal{opacity:1;transform:none}
+.business-page .brand-wordmark{display:block;font-size:31px;font-weight:850;letter-spacing:-1.7px;line-height:1;color:#f5f7f8}
+.business-page .brand-wordmark small{display:block;font-size:8px;letter-spacing:2.05px;font-weight:600;line-height:1.5;margin-top:7px;white-space:nowrap}
+.business-page .brand{flex-shrink:0}
+.business-page .site-header{gap:28px}
+.business-page .nav{gap:24px;font-size:13px}
+.business-page .header-contact{font-size:12px;white-space:nowrap}
+.business-page .section-pad{padding-top:100px;padding-bottom:100px}
+.business-page .business-hero{min-height:680px;gap:64px;padding-top:65px;padding-bottom:90px;grid-template-columns:1.12fr 1fr}
+.business-page .hero h1{font-size:clamp(48px,5.25vw,74px);line-height:1.03;letter-spacing:-.055em}
+.business-page .hero h1 em,.experience-hero h1 em{font-style:normal;background:linear-gradient(100deg,#7ef2de,#73afff 80%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.business-page .hero-lead{font-size:17px;line-height:1.7}
+.business-page .hero-actions,.section-actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px}
+.hero-footnote{font-size:11px;line-height:1.8;color:var(--muted);margin:40px 0 0;padding-top:22px;border-top:1px solid var(--line)}
+.business-map{position:relative;border:1px solid #ffffff24;border-radius:26px;padding:30px;background:radial-gradient(ellipse at 100% 0,#18394880,transparent 65%),linear-gradient(135deg,#121923,#090c12);box-shadow:0 0 100px #2466a013}
+.map-top{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:10px;letter-spacing:.15em;color:#a8c9d7}
+.map-dot{width:7px;height:7px;border-radius:50%;background:#7ef2de;box-shadow:0 0 16px #7ef2de88}
+.map-intro{font-size:26px;line-height:1.25;letter-spacing:-.03em;margin:34px 0;color:#abb9c9}
+.map-intro strong{color:#f5f7f8;font-weight:500}
+.map-core{border:1px solid #71d4e754;border-radius:14px;text-align:center;padding:23px;font-size:21px;font-weight:650;background:linear-gradient(110deg,#142c37,#132034)}
+.map-core span{display:block;font-size:10px;letter-spacing:.15em;text-transform:uppercase;font-weight:400;color:#99c8da;margin-top:8px}
+.map-modules{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}
+.map-modules span{font-size:12px;padding:13px 15px;border-radius:8px;border:1px solid #ffffff13;background:#ffffff03;color:#ccd8df}
+.map-note{margin:22px 0 0;font-size:10px;color:#8f9eaf;line-height:1.6}
+.business-page .solutions{border-top:1px solid var(--line)}
+.business-page .section-heading h2,.experience-panel h2{font-size:clamp(32px,4vw,52px);line-height:1.1;letter-spacing:-.045em}
+.business-page .section-heading p{max-width:660px;color:var(--muted);font-size:16px;line-height:1.75}
+.solution-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.solution-card{display:flex;flex-direction:column;padding:30px;border-radius:22px;border:1px solid #ffffff20;background:linear-gradient(135deg,#111821,#090b10);transition:border-color .2s,transform .2s;min-width:0}
+.solution-card:nth-child(2){background:linear-gradient(135deg,#0d2025,#090b10)}
+.solution-card:nth-child(3){background:linear-gradient(135deg,#20172f,#090b10)}
+.solution-card:hover{border-color:#7ef2de88;transform:translateY(-4px)}
+.solution-number{color:#8f9aa6;font-size:13px;margin-bottom:35px}
+.solution-card .kicker{color:#9ce6e2;font-size:10px;letter-spacing:.12em}
+.solution-card h3{font-size:27px;line-height:1.15;letter-spacing:-.035em;margin:18px 0}
+.solution-card p{font-size:14px;line-height:1.8;color:#adb9c4;margin-bottom:30px}
+.solution-link{margin-top:auto;font-size:12px;line-height:1.6;color:#e4ebef;display:flex;justify-content:space-between;gap:12px}
+.modules-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:38px 0}
+.module-card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#0b0e14}
+.module-card h3{font-size:19px;font-weight:600;letter-spacing:-.025em}
+.module-card p{font-size:14px;line-height:1.7;color:#aab7c4;margin:0}
+.scope-note{font-size:12px;color:#99a8b6;line-height:1.8;margin-top:24px;max-width:700px}
+.experience-panel{padding:55px;border:1px solid #a47aea38;border-radius:28px;display:grid;grid-template-columns:1.05fr 1fr;gap:60px;background:radial-gradient(ellipse at 0 0,#52357530,transparent 70%),#0c0d13}
+.experience-panel h2{margin:24px 0 0}
+.experience-panel h2 span{color:#b4a1e5}
+.experience-panel p{color:#b4b7c6;line-height:1.8;font-size:15px}
+.experience-panel .btn{margin-top:12px}
+.experience-hero{max-width:1100px}
+.experience-hero h1{font-size:clamp(42px,6vw,76px);line-height:1.06;letter-spacing:-.055em;margin:30px 0}
+.experience-hero .hero-lead{max-width:700px;margin-bottom:32px}
+.capabilities{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.capability-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.capability-grid h3{font-size:23px;font-weight:550;letter-spacing:-.025em}
+.capability-grid p{color:#a5b0bd;font-size:14px;line-height:1.8}
+.business-page .work-grid{grid-template-columns:1fr 1fr}
+.business-page .work-grid .project{grid-column:auto;min-height:430px}
+.business-page .work-grid .project-main{grid-row:auto}
+.business-page .contact-email{overflow-wrap:anywhere}
+.business-page footer{gap:28px}
+.business-page footer .brand{width:auto;height:auto}
+.business-page a:focus-visible,.business-page button:focus-visible,.business-page summary:focus-visible{outline:2px solid #7ef2de;outline-offset:5px}
+.business-page .anchor-alias{scroll-margin-top:30px}
+.business-page .clinic-landing-hero h1{font-size:clamp(34px,4.2vw,56px);line-height:1.06}
+@media(max-width:1100px){.business-page .site-header{gap:18px}.business-page .nav{gap:16px}.business-page .business-hero{gap:36px}.solution-card{padding:24px}}
+@media(max-width:980px){.business-page .section-pad{padding:70px 28px}.business-page .business-hero{grid-template-columns:1fr;gap:40px;min-height:0}.business-page .hero-copy{max-width:720px}.business-page .hero h1{font-size:clamp(48px,8vw,70px)}.business-map{width:100%;max-width:620px;margin:0 auto}.solution-grid{grid-template-columns:1fr}.solution-card{padding:30px}.solution-number{margin-bottom:24px}.modules-grid{grid-template-columns:1fr 1fr}.experience-panel{grid-template-columns:1fr;gap:24px;padding:38px}.business-page .header-contact{display:none}.business-page .site-header{justify-content:space-between}.capability-grid{gap:24px}.business-page .clinic-card{padding:38px}.business-page .work-grid .project{min-height:380px}}
+@media(max-width:640px){.business-page .section-pad{padding:56px 22px}.business-page .site-header{padding:0 22px;height:auto;min-height:84px;flex-wrap:wrap}.business-page .brand-wordmark{font-size:29px}.business-page .brand-wordmark small{font-size:7.5px;letter-spacing:1.9px}.business-page .hero h1{font-size:clamp(40px,10.7vw,58px);line-height:1.04}.business-page .hero-lead{font-size:16px}.business-page .eyebrow{font-size:9px;letter-spacing:.12em}.business-page .hero-actions{align-items:flex-start;gap:22px}.business-page .hero-actions .btn{width:100%}.hero-footnote{margin-top:30px}.business-map{padding:24px;border-radius:20px}.map-intro{font-size:25px}.map-modules span{padding:12px 10px;font-size:11px}.solution-card{padding:26px}.solution-card h3{font-size:28px}.business-page .section-heading h2{font-size:34px}.modules-grid,.capability-grid{grid-template-columns:1fr}.experience-panel{padding:28px 22px;gap:24px}.experience-panel h2{font-size:34px}.experience-panel .btn{font-size:12px;width:100%}.business-page .clinic-card{padding:28px 22px}.business-page .clinic h2{font-size:32px;line-height:1.08}.business-page .clinic-landing-hero h1{font-size:34px}.business-page .work-grid{grid-template-columns:1fr}.business-page .work-grid .project{min-height:420px}.business-page .contact h2{font-size:36px}.business-page .contact-box{padding:28px 22px}.business-page footer{padding:38px 22px;align-items:flex-start}.business-page .scope-note{font-size:12px}.experience-hero h1{font-size:42px}.business-page .clinic-support{gap:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.business-page *, .business-page *::before,.business-page *::after{animation:none!important;transition:none!important}}
+.business-page .btn{gap:8px}
+@media(max-width:640px){.business-page .business-hero .hero-copy{text-align:left}.business-page .business-hero .eyebrow{justify-content:flex-start}.business-page .clinic-support{padding:28px 22px}}
+
+/* Official supplied wordmark: original pixels, natural proportions. */
+.business-page .brand img.official-wordmark{display:block;width:220px;max-width:100%;height:auto;object-fit:contain}
+.business-page footer .brand img.official-wordmark{width:220px;height:auto}
+@media(max-width:1100px){.business-page .brand img.official-wordmark{width:190px}}
+@media(max-width:640px){.business-page .brand img.official-wordmark,.business-page footer .brand img.official-wordmark{width:185px;height:auto}}
