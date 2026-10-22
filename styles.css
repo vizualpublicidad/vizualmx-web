@@ -2460,3 +2460,6 @@ footer>a:first-child{flex-shrink:0}
 @media(max-width:1100px){.business-page .brand img.official-wordmark{width:190px}}
 @media(max-width:640px){.business-page .brand img.official-wordmark,.business-page footer .brand img.official-wordmark{width:185px;height:auto}}
 @media(max-width:360px){.business-page .site-header .brand img.official-wordmark{width:160px}.business-page .site-header{gap:12px}}
+
+/* Leave room to reach footer links above the persistent contact button. */
+.business-page footer{padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
