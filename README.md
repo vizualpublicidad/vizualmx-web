@@ -13,7 +13,9 @@ Rebranding del sitio estático existente, preparado el 22 de octubre de 2026.
 
 Esta carpeta es la raíz del sitio. Mantener el proyecto estático existente en Vercel, sin framework ni compilación; publicar el contenido completo con `assets/`, HTML, CSS, JavaScript, robots.txt, sitemap.xml y vercel.json. Se conserva `cleanUrls: true` y la URL existente de clínicas. Los enlaces sin extensión requieren ese servidor; para revisar localmente usar un servidor que resuelva `/operaciones` a `operaciones.html`.
 
-La entrega no publica cambios ni modifica el repositorio remoto. `vizualmx-empresas` es una variante local anterior y no es la carpeta de esta entrega. No se modificaron archivos de `sources/`.
+Publicación autorizada por el usuario; se integra con la rama main del repositorio remoto. `vizualmx-empresas` es una variante local anterior y no es la carpeta de esta entrega. No se modificaron archivos de `sources/`.
+
+Se conserva `/infraestructura-digital` como capacidad secundaria, junto con los subrayados animados de navegación existentes.
 
 ## Identidad
 
