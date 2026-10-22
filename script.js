@@ -86,3 +86,21 @@ document.querySelectorAll('[data-video-project]').forEach(trigger => {
   document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
 });
 
+
+// Let readers pause the moving solution strip; respect their motion preference.
+(() => {
+  const strip = document.querySelector('.business-ticker');
+  const button = strip?.querySelector('.ticker-toggle');
+  if (!button) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const update = () => { button.hidden = reduced.matches; };
+  button.addEventListener('click', () => {
+    const paused = strip.classList.toggle('is-paused');
+    const label = paused ? 'Reanudar texto en movimiento' : 'Pausar texto en movimiento';
+    button.setAttribute('aria-label', label);
+    button.title = label;
+    button.querySelector('span').textContent = paused ? '▷' : 'Ⅱ';
+  });
+  reduced.addEventListener('change', update);
+  update();
+})();
