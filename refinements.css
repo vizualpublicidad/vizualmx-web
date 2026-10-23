@@ -302,3 +302,29 @@
 .background-paused .tech-background *, .background-inactive .tech-background * { animation-play-state: paused; }
 @media(max-width:980px) { .tech-orbit { width: 100vw; opacity: .65; } .tech-orbit-one { right: -55%; top: 8%; } .tech-orbit-two { left: -60%; bottom: -10%; } .tech-particle:nth-of-type(even) { display: none; } }
 @media(prefers-reduced-motion:reduce) { .tech-background * { animation: none !important; } .tech-particle { opacity: .2; } .background-toggle { display: none; } }
+
+/* Visual first impression and shared social destinations. */
+.hero-ecosystem { margin: 0; width: 100%; align-self: center; }
+.hero-ecosystem svg { display: block; width: 100%; height: auto; font-family: inherit; }
+.business-page footer { flex-wrap: wrap; gap: 24px; }
+.footer-socials { display: flex; align-items: center; justify-content: center; gap: 10px; }
+.footer-socials > a, .footer-socials > span { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #4988b546; border-radius: 50%; background: #0c1927; color: #ccecff; }
+.footer-socials svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.footer-socials > a:hover { color: #67cfff; border-color: #39bbed; box-shadow: 0 0 20px #1597e82b; }
+.footer-socials > a:focus-visible { outline: 2px solid #67cfff; outline-offset: 3px; }
+.footer-socials .social-pending { opacity: .4; cursor: default; }
+@media(max-width:980px) {
+ .home-page .business-hero { gap: 12px; }
+ .hero-ecosystem { max-width: 540px; margin-inline: auto; }
+}
+@media(max-width:640px) {
+ .home-page .business-hero { padding-top: 22px; padding-bottom: 22px; }
+ .home-page .hero h1 { margin: 12px 0 14px; font-size: clamp(32px,8.8vw,42px); }
+ .home-page .hero-lead { margin: 0; font-size: 15px; line-height: 1.5; max-width: 330px; }
+ .home-page .hero-actions { margin-top: 18px; gap: 14px; }
+ .home-page .hero-actions .text-link { font-size: 13px; }
+ .hero-ecosystem { margin-top: 8px; }
+ .home-page .solution-card h3 { min-height: 0; margin-bottom: 16px; }
+ .home-page .solution-card p { margin-top: 0; }
+ .business-page footer .footer-socials { margin: 0 auto; }
+}
