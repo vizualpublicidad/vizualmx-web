@@ -51,11 +51,13 @@ if (year) year.textContent = new Date().getFullYear();
   if (!toggle || !nav) return;
   toggle.hidden = false;
   document.documentElement.classList.add('has-mobile-menu');
-  const close = () => { toggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); };
+  const label = toggle.querySelector('.menu-label');
+  const close = () => { toggle.setAttribute('aria-expanded', 'false'); nav.classList.remove('is-open'); if (label) label.textContent = 'Menú'; };
   toggle.addEventListener('click', () => {
     const open = toggle.getAttribute('aria-expanded') !== 'true';
     toggle.setAttribute('aria-expanded', String(open));
     nav.classList.toggle('is-open', open);
+    if (label) label.textContent = open ? 'Cerrar' : 'Menú';
   });
   nav.addEventListener('click', event => { if (event.target.closest('a')) close(); });
   document.addEventListener('click', event => {
