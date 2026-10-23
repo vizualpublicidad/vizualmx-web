@@ -50,3 +50,9 @@ Se conserva `analytics.js`: GA4 sigue desactivado hasta disponer del ID real del
 - No hay backend nuevo, formularios ni servicios adicionales que configurar.
 
 Los archivos previos a esta intervención están respaldados fuera del sitio, en `entregables/rebranding-respaldo/`.
+
+## Refinamiento corporativo
+
+`refinements.css` concentra la nueva capa visual compartida: ancho y márgenes consistentes, espaciado más compacto, degradados azules, fondo tecnológico sutil y tarjetas con iconos. Business Experience incorpora un marco de video con material real de Datómico identificado como proyecto independiente. WhatsApp aumenta de tamaño en PC; el pie se centra en móvil/tablet. La franja aparece bajo el encabezado al entrar desde dispositivos de hasta 980 px.
+
+Verificado en las cinco páginas a 320, 390, 768 y 1280 px: sin desbordamiento horizontal de contenido, logo del pie centrado en móvil/tablet y franja visible desde la primera pantalla en la portada. Los videos conservan pausa al cerrar y devolución del foco al botón que los abrió.

@@ -68,24 +68,27 @@ if (year) year.textContent = new Date().getFullYear();
   window.matchMedia('(max-width: 980px)').addEventListener('change', close);
 })();
 
-document.querySelectorAll('[data-video-project]').forEach(trigger => {
-  const dialog = document.getElementById(trigger.getAttribute('aria-controls'));
-  if (!dialog || !trigger || typeof dialog.showModal !== 'function') return;
+document.querySelectorAll('.project-video-dialog').forEach(dialog => {
+  if (typeof dialog.showModal !== 'function') return;
   const video = dialog.querySelector('video');
-  trigger.addEventListener('click', event => {
-    event.preventDefault();
-    dialog.showModal();
-    video.play().catch(() => { /* Native controls remain available. */ });
+  let opener;
+  document.querySelectorAll('[data-video-project]').forEach(trigger => {
+    if (trigger.getAttribute('aria-controls') !== dialog.id) return;
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      opener = trigger;
+      dialog.showModal();
+      video.play().catch(() => {});
+    });
   });
   dialog.querySelector('button').addEventListener('click', () => dialog.close());
   dialog.addEventListener('click', event => {
-    const bounds = dialog.getBoundingClientRect();
-    if (event.target === dialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) dialog.close();
+    const r = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom)) dialog.close();
   });
-  dialog.addEventListener('close', () => { video.pause(); trigger.focus({ preventScroll: true }); });
+  dialog.addEventListener('close', () => { video.pause(); opener?.focus({ preventScroll: true }); });
   document.addEventListener('visibilitychange', () => { if (document.hidden) video.pause(); });
 });
-
 
 // Let readers pause the moving solution strip; respect their motion preference.
 (() => {
