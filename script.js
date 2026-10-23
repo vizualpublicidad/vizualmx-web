@@ -109,3 +109,27 @@ document.querySelectorAll('.project-video-dialog').forEach(dialog => {
   reduced.addEventListener('change', update);
   update();
 })();
+
+// Decorative motion can be paused independently and stops in background tabs.
+(() => {
+  const button = document.querySelector('.background-toggle');
+  if (!button) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = false;
+  try { paused = localStorage.getItem('vizual-background-paused') === 'true'; } catch {}
+  const update = () => {
+    button.hidden = reduced.matches;
+    document.body.classList.toggle('background-paused', paused);
+    document.body.classList.toggle('background-inactive', document.hidden);
+    button.setAttribute('aria-pressed', String(paused));
+    button.textContent = paused ? 'Activar fondo animado' : 'Pausar fondo animado';
+  };
+  button.addEventListener('click', () => {
+    paused = !paused;
+    try { localStorage.setItem('vizual-background-paused', String(paused)); } catch {}
+    update();
+  });
+  reduced.addEventListener('change', update);
+  document.addEventListener('visibilitychange', update);
+  update();
+})();
