@@ -226,14 +226,19 @@
 .business-page .neon-card { background: linear-gradient(145deg,#101f30eb,#0a101aeb); }
 .business-page .service-icon { --icon-accent: #49bdf1; }
 
-/* Blue hover glow for the Operations modules, without shifting the layout. */
-.business-page .module-card {
+/* Shared blue glow across solution, capability, service and media cards. */
+.business-page :is(.module-card, .solution-card, .capability-grid > article, .clinic-info-card, .neon-card, .experience-media, .clinic-reel-preview, .project) {
   transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
 }
 @media (hover: hover) and (pointer: fine) {
-  .business-page .module-card:hover {
+  .business-page :is(.module-card, .solution-card, .capability-grid > article, .clinic-info-card, .neon-card, .experience-media, .clinic-reel-preview, .project):hover {
     border-color: #39bbed99;
     background-color: #0d1c2d;
     box-shadow: 0 0 0 1px #39bbed1f, 0 0 28px #1597e82b, 0 10px 38px #0874cf1f, inset 0 0 24px #168ee80c;
+    transform: none;
   }
+}
+.business-page :is(.module-card, .solution-card, .capability-grid > article, .clinic-info-card, .neon-card, .experience-media, .clinic-reel-preview, .project):focus-visible {
+  border-color: #39bbed99;
+  box-shadow: 0 0 0 1px #39bbed1f, 0 0 28px #1597e82b, 0 10px 38px #0874cf1f, inset 0 0 24px #168ee80c;
 }
