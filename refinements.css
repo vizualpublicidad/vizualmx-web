@@ -82,7 +82,6 @@
 .business-page .map-note { margin-top: 16px; }
 .home-page main { display: flex; flex-direction: column; }
 .home-page main > .business-hero { order: -2; }
-.home-page main > .business-ticker { order: -1; }
 .business-page .business-ticker { padding-top: 10px; padding-bottom: 10px; background: #0b1620c9; }
 .business-page .ticker-toggle { color: #69c5f0; }
 .business-page .solution-grid { gap: 20px; }
@@ -176,7 +175,6 @@
 @media(max-width:640px) {
   .business-page .section-pad { padding: 36px 22px; }
   .business-page .site-header { min-height: 78px; }
-  .home-page main > .business-ticker { order: -3; }
   .business-page .business-ticker { padding: 7px 16px; }
   .business-page .business-hero { padding-top: 28px; gap: 26px; }
   .business-page .hero h1 { font-size: clamp(36px,9.6vw,48px); line-height: 1.1; margin: 16px 0 20px; }
@@ -217,7 +215,6 @@
   .business-page footer > a { margin: 0 auto; }
 }
 @media(min-width:641px) and (max-width:980px) {
-  .home-page main > .business-ticker { order: -3; }
   .business-page footer { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
   .business-page footer .brand,.business-page footer > a { margin: 0 auto; }
   .business-page footer p { margin: 0; text-align: center; }
@@ -304,8 +301,6 @@
 @media(prefers-reduced-motion:reduce) { .tech-background * { animation: none !important; } .tech-particle { opacity: .2; } .background-toggle { display: none; } }
 
 /* Visual first impression and shared social destinations. */
-.hero-ecosystem { margin: 0; width: 100%; align-self: center; }
-.hero-ecosystem svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .business-page footer { flex-wrap: wrap; gap: 24px; }
 .footer-socials { display: flex; align-items: center; justify-content: center; gap: 10px; }
 .footer-socials > a, .footer-socials > span { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #4988b546; border-radius: 50%; background: #0c1927; color: #ccecff; }
@@ -315,7 +310,6 @@
 .footer-socials .social-pending { opacity: .4; cursor: default; }
 @media(max-width:980px) {
  .home-page .business-hero { gap: 12px; }
- .hero-ecosystem { max-width: 540px; margin-inline: auto; }
 }
 @media(max-width:640px) {
  .home-page .business-hero { padding-top: 22px; padding-bottom: 22px; }
@@ -323,8 +317,15 @@
  .home-page .hero-lead { margin: 0; font-size: 15px; line-height: 1.5; max-width: 330px; }
  .home-page .hero-actions { margin-top: 18px; gap: 14px; }
  .home-page .hero-actions .text-link { font-size: 13px; }
- .hero-ecosystem { margin-top: 8px; }
  .home-page .solution-card h3 { min-height: 0; margin-bottom: 16px; }
  .home-page .solution-card p { margin-top: 0; }
  .business-page footer .footer-socials { margin: 0 auto; }
 }
+
+/* Brand animation stage, with the exact official wordmark as its poster. */
+.home-page main > .business-ticker { order: 0; }
+.hero-brand-stage { margin: 0; display: grid; place-items: center; width: 100%; aspect-ratio: 1.4; border-radius: 28px; overflow: hidden; background: radial-gradient(ellipse at center,#12365366,transparent 68%),#080e16a8; border: 1px solid #4b9fd329; }
+.hero-brand-stage img { display: block; width: 78%; height: auto; }
+.hero-brand-stage video { display: block; width: 100%; height: 100%; object-fit: contain; }
+@media(max-width:980px) { .hero-brand-stage { max-width: 540px; margin: 12px auto 0; aspect-ratio: 1.8; } }
+@media(max-width:640px) { .hero-brand-stage { aspect-ratio: 1.8; border-radius: 22px; } }
