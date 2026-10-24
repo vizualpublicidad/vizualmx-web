@@ -49,8 +49,15 @@
         throw new Error(result.message || 'No pudimos enviar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp.');
       }
       delivered = true;
+      form.reset();
+      challenge = null;
       fields.disabled = true;
+      fields.hidden = true;
       topic.disabled = true;
+      topic.hidden = true;
+      form.querySelector('label[for="contact-topic"]').hidden = true;
+      form.querySelector('.form-heading h2').textContent = 'Solicitud enviada';
+      form.querySelector('.form-heading p').hidden = true;
       button.textContent = 'Solicitud enviada';
       status.dataset.state = 'success';
       status.textContent = 'Gracias. Recibimos tu solicitud y te contactaremos al correo que nos compartiste.';
