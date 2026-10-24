@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {createHmac,randomUUID} from 'node:crypto';
+const {default:handler}=await import(process.cwd()+'/api/contact.mjs');
+process.env.RESEND_API_KEY='test-only-key';process.env.RESEND_EMAIL_DOMAIN='notificaciones.vizualmx.com';
+const challenge=(age=5000)=>{const s=`${Date.now()-age}.${randomUUID()}`;return s+'.'+createHmac('sha256',process.env.RESEND_API_KEY).update('vizual-contact:'+s).digest('hex')};
+const payload={topic:'guidance',name:'Prueba técnica',company:'VIZUAL',email:'contacto@vizualmx.com',message:'Prueba automatizada sin envío real.',challenge:challenge()};
+const req=(data=payload,origin='https://vizualmx.com')=>new Request('https://vizualmx.com/api/contact',{method:'POST',headers:{origin,'Content-Type':'application/json'},body:JSON.stringify(data)});
+let calls=[];globalThis.fetch=async(url,options)=>{calls.push({url,...options});return Response.json({id:'test-id'})};
+assert.equal((await handler.fetch(req())).status,200);
+assert.deepEqual(JSON.parse(calls[0].body).to,['contacto@vizualmx.com']);
+await handler.fetch(req());assert.equal(calls[0].headers['Idempotency-Key'],calls[1].headers['Idempotency-Key']);
+for(const [data,status] of [[{...payload,challenge:'tampered'},400],[{...payload,challenge:challenge(4000000)},400],[{...payload,challenge:challenge(0)},429],[{...payload,email:'wrong'},400],[{...payload,website:'spam'},400],[{...payload,message:'x'.repeat(17000)},413]])assert.equal((await handler.fetch(req(data))).status,status);
+assert.equal((await handler.fetch(req(payload,'https://other.example'))).status,403);
+assert.equal(calls.length,2);
+globalThis.fetch=async()=>Response.json({error:'failure'},{status:500});assert.equal((await handler.fetch(req())).status,502);
+console.log('PASS: recipient, idempotency, signature, expiry, speed, validation, honeypot, size, origin, provider failure');

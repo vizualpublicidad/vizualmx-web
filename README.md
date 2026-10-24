@@ -47,7 +47,7 @@ Se conserva `analytics.js`: GA4 sigue desactivado hasta disponer del ID real del
 - Enlaces locales, archivos referenciados y anclas existentes; un H1 y ningún ID duplicado por página; JSON-LD válido.
 - JavaScript pasa revisión de sintaxis; sin errores ni advertencias en la consola revisada de portada.
 - Los CTA de WhatsApp/correo se validaron por destino; no se enviaron mensajes.
-- No hay backend nuevo, formularios ni servicios adicionales que configurar.
+- El formulario de `/contacto` usa una función de Vercel y Resend; requiere las variables privadas `RESEND_API_KEY` y `RESEND_EMAIL_DOMAIN` proporcionadas por la integración. Nunca incluir archivos `.env` en entregas ni repositorios.
 
 Los archivos previos a esta intervención están respaldados fuera del sitio, en `entregables/rebranding-respaldo/`.
 
@@ -56,3 +56,9 @@ Los archivos previos a esta intervención están respaldados fuera del sitio, en
 `refinements.css` concentra la nueva capa visual compartida: ancho y márgenes consistentes, espaciado más compacto, degradados azules, fondo tecnológico sutil y tarjetas con iconos. Business Experience incorpora un marco de video con material real de Datómico identificado como proyecto independiente. WhatsApp aumenta de tamaño en PC; el pie se centra en móvil/tablet. La franja aparece bajo el encabezado al entrar desde dispositivos de hasta 980 px.
 
 Verificado en las cinco páginas a 320, 390, 768 y 1280 px: sin desbordamiento horizontal de contenido, logo del pie centrado en móvil/tablet y franja visible desde la primera pantalla en la portada. Los videos conservan pausa al cerrar y devolución del foco al botón que los abrió.
+
+## Contacto directo por correo
+
+`contacto.html`, `contacto.css` y `contacto.js` presentan el formulario sin logos de clientes. `api/contact.mjs` valida los datos y envía exclusivamente a contacto@vizualmx.com, con Reply-To del visitante. El remitente usa el subdominio notificaciones.vizualmx.com autenticado mediante DNS. Publicar también la carpeta `api/`; un alojamiento solo estático no puede enviar el formulario. La integración Resend debe estar conectada al proyecto y entorno de destino.
+
+Protecciones: validación en servidor, tamaño limitado, origen permitido, campo trampa, comprobante firmado con expiración y envío idempotente para reintentos. No se muestra confirmación de éxito si el proveedor rechaza el envío. Los registros MX/SPF de Spacemail permanecen intactos.
