@@ -324,8 +324,8 @@
 
 /* Brand animation stage, with the exact official wordmark as its poster. */
 .home-page main > .business-ticker { order: 0; }
-.hero-brand-stage { margin: 0; display: grid; place-items: center; width: 100%; aspect-ratio: 1.4; border-radius: 28px; overflow: hidden; background: radial-gradient(ellipse at center,#12365366,transparent 68%),#080e16a8; border: 1px solid #4b9fd329; }
+.hero-brand-stage { margin: 0; display: grid; place-items: center; width: 100%; aspect-ratio: 16 / 9; border-radius: 28px; overflow: hidden; background: radial-gradient(ellipse at center,#12365366,transparent 68%),#080e16a8; border: 1px solid #4b9fd329; }
 .hero-brand-stage img { display: block; width: 78%; height: auto; }
-.hero-brand-stage video { display: block; width: 100%; height: 100%; object-fit: contain; }
-@media(max-width:980px) { .hero-brand-stage { max-width: 540px; margin: 12px auto 0; aspect-ratio: 1.8; } }
-@media(max-width:640px) { .hero-brand-stage { aspect-ratio: 1.8; border-radius: 22px; } }
+.hero-brand-stage video { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media(max-width:980px) { .hero-brand-stage { max-width: 540px; margin: 12px auto 0; aspect-ratio: 16 / 9; } }
+@media(max-width:640px) { .hero-brand-stage { aspect-ratio: 16 / 9; border-radius: 22px; } }
