@@ -347,3 +347,10 @@
 @media(min-width:641px) and (max-width:980px) {
  .home-page .hero-brand-stage { max-width: 760px; }
 }
+
+/* Align the home navigation with the expanded opening composition. */
+@media(min-width:981px) {
+ .home-page .site-header {
+   padding-inline: calc((100% - min(100%, 1760px)) / 2 + clamp(32px,4vw,72px));
+ }
+}
