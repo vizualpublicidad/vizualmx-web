@@ -329,3 +329,21 @@
 .hero-brand-stage video { display: block; width: 100%; height: 100%; object-fit: cover; }
 @media(max-width:980px) { .hero-brand-stage { max-width: 540px; margin: 12px auto 0; aspect-ratio: 16 / 9; } }
 @media(max-width:640px) { .hero-brand-stage { aspect-ratio: 16 / 9; border-radius: 22px; } }
+
+/* Give the opening message and brand film the full desktop stage. */
+@media(min-width:981px) {
+ .home-page .business-hero {
+   max-width: 1760px; padding: clamp(48px,5vw,88px) clamp(32px,4vw,72px);
+   min-height: clamp(580px,76svh,860px); align-items: center;
+   grid-template-columns: minmax(0,1fr) minmax(0,1.12fr); gap: clamp(32px,4vw,72px);
+ }
+ .home-page .business-hero .hero-copy { max-width: none; min-width: 0; }
+ .home-page .hero h1 { font-size: clamp(66px,5.2vw,96px); line-height: 1.04; letter-spacing: -.05em; margin: 24px 0 28px; }
+ .home-page .hero-lead { font-size: clamp(17px,1.25vw,21px); max-width: 580px; line-height: 1.6; }
+ .home-page .hero-actions { margin-top: 32px; gap: 24px; }
+ .home-page .hero-actions .btn { padding: 19px 27px; font-size: 16px; }
+ .home-page .hero-brand-stage { width: 100%; max-width: none; box-shadow: 0 0 70px #137bbd14; border-color: #4199cb40; }
+}
+@media(min-width:641px) and (max-width:980px) {
+ .home-page .hero-brand-stage { max-width: 760px; }
+}
