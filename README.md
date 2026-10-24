@@ -62,3 +62,7 @@ Verificado en las cinco páginas a 320, 390, 768 y 1280 px: sin desbordamiento h
 `contacto.html`, `contacto.css` y `contacto.js` presentan el formulario sin logos de clientes. `api/contact.mjs` valida los datos y envía exclusivamente a contacto@vizualmx.com, con Reply-To del visitante. El remitente usa el subdominio notificaciones.vizualmx.com autenticado mediante DNS. Publicar también la carpeta `api/`; un alojamiento solo estático no puede enviar el formulario. La integración Resend debe estar conectada al proyecto y entorno de destino.
 
 Protecciones: validación en servidor, tamaño limitado, origen permitido, campo trampa, comprobante firmado con expiración y envío idempotente para reintentos. No se muestra confirmación de éxito si el proveedor rechaza el envío. Los registros MX/SPF de Spacemail permanecen intactos.
+
+## Imágenes de soluciones en portada
+
+Los tres contenedores de 01 Operations, 02 Clinic y 03 Business Experience usan proporción 8:5. Preparar cada imagen en 1600 × 1000 px (WebP preferido). Mantener el motivo principal centrado y evitar texto integrado. Cambiar el `src` de `.solution-image` correspondiente y retirar `is-placeholder` del contenedor `.solution-media` para activar el encuadre a sangre. El logo temporal reutiliza el archivo oficial sin modificaciones.
