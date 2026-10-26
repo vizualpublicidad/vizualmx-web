@@ -411,3 +411,15 @@
  .operations-module-copy { padding: 22px; }
  .operations-hero-image figcaption { padding: 16px 18px; }
 }
+
+/* Business Experience: complete brand compositions and responsive imagery. */
+.experience-brand-hero { padding: 0; overflow: hidden; }
+.experience-brand-hero > img { display: block; width: 100%; height: auto; }
+.experience-brand-hero figcaption { padding: 22px 24px; }
+.business-page .capability-grid > .experience-image-card { padding: 0; overflow: hidden; }
+.experience-card-image { aspect-ratio: 8 / 5; background: #0c1825; border-bottom: 1px solid #49bdf126; }
+.experience-card-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.experience-card-copy { padding: 26px; }
+@media(max-width:640px) { .experience-card-copy { padding: 22px; } }
+
+@media(min-width:981px) { .experience-page .experience-hero { grid-template-columns: 1fr 1.1fr; gap: 40px; } }
