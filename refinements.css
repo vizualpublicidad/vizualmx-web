@@ -423,3 +423,23 @@
 @media(max-width:640px) { .experience-card-copy { padding: 22px; } }
 
 @media(min-width:981px) { .experience-page .experience-hero { grid-template-columns: 1fr 1.1fr; gap: 40px; } }
+
+/* A compact homepage overview; full service details live on their own pages. */
+.home-page .home-capabilities { padding-top: 0; padding-bottom: 48px; }
+.capabilities-strip { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 28px 0; border-top: 1px solid #49bdf126; }
+.home-page .capabilities-strip h2 { font-size: clamp(22px, 2.5vw, 32px); line-height: 1.25; margin: 10px 0 0; letter-spacing: -.035em; }
+.capabilities-strip > p { max-width: 380px; margin: 0; color: #aebdcb; font-size: 15px; line-height: 1.8; }
+.infrastructure-shortcut { display: flex; align-items: center; gap: 20px; padding: 24px; border: 1px solid #49bdf133; border-radius: 20px; background: linear-gradient(110deg,#102333,#0a121d); text-decoration: none; }
+.infrastructure-shortcut .capability-icon { flex: 0 0 44px; width: 44px; height: 44px; margin: 0; }
+.infrastructure-shortcut strong { display: block; color: #f1f6fa; font-size: 18px; line-height: 1.4; }
+.infrastructure-shortcut strong + span { display: block; color: #aebdcb; font-size: 14px; line-height: 1.6; margin-top: 6px; }
+.infrastructure-link { margin-left: auto; flex-shrink: 0; color: #75ccf5; font-size: 14px; }
+.infrastructure-shortcut:hover, .infrastructure-shortcut:focus-visible { border-color: #49bdf1; box-shadow: 0 0 28px #189fe51a; }
+@media(max-width:700px) {
+ .capabilities-strip { display: block; padding: 24px 0; }
+ .capabilities-strip > p { margin-top: 14px; }
+ .infrastructure-shortcut { flex-wrap: wrap; gap: 14px; padding: 22px; }
+ .infrastructure-shortcut > span:nth-child(2) { flex: 1; min-width: 180px; }
+ .infrastructure-link { width: 100%; margin: 4px 0 0; }
+ .home-page .home-capabilities { padding-bottom: 32px; }
+}
