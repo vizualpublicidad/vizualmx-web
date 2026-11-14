@@ -1,4 +1,14 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/agenda-demo-clinica",
+      "destination": "https://vizual-agenda-demo-estetica.vercel.app"
+    },
+    {
+      "source": "/velaire-logo.webp",
+      "destination": "https://vizual-agenda-demo-estetica.vercel.app/velaire-logo.webp"
+    }
+  ]
 }
