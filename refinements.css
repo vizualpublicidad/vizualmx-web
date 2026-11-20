@@ -443,3 +443,82 @@
  .infrastructure-link { width: 100%; margin: 4px 0 0; }
  .home-page .home-capabilities { padding-bottom: 32px; }
 }
+
+/* === Home solutions: four clear offers === */
+@media (min-width: 981px){
+  .home-page .solution-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+.home-page .agenda-media{
+  background:
+    radial-gradient(circle at 68% 22%,rgba(92,198,255,.18),transparent 30%),
+    linear-gradient(135deg,#111a25,#08101a);
+  display:grid;
+  place-items:center;
+}
+.home-page .agenda-demo-visual{
+  width:100%;
+  height:100%;
+  display:grid;
+  place-items:center;
+  padding:34px;
+}
+.home-page .agenda-demo-device{
+  width:min(74%,330px);
+  aspect-ratio:.66;
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:30px;
+  padding:30px 22px 22px;
+  background:
+    radial-gradient(circle at 50% 0,rgba(255,255,255,.09),transparent 28%),
+    linear-gradient(180deg,#f7f0ea,#e9ddd4);
+  box-shadow:0 24px 54px rgba(0,0,0,.28),inset 0 0 0 7px #151a20;
+  color:#382f2a;
+  transform:rotate(2deg);
+}
+.home-page .agenda-demo-brand{
+  font-size:10px;
+  letter-spacing:.22em;
+  text-align:center;
+  margin-bottom:22px;
+  font-weight:750;
+}
+.home-page .agenda-demo-line{
+  height:8px;
+  border-radius:999px;
+  background:#d3c3b7;
+  margin:10px auto;
+  width:70%;
+}
+.home-page .agenda-demo-line.wide{width:88%;}
+.home-page .agenda-demo-days{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:24px 0 28px;
+}
+.home-page .agenda-demo-days i{
+  display:block;
+  aspect-ratio:1;
+  border-radius:9px;
+  background:#fff;
+  border:1px solid #d8c9bf;
+}
+.home-page .agenda-demo-days i:nth-child(2),
+.home-page .agenda-demo-days i:nth-child(5){
+  background:#241f1d;
+  border-color:#241f1d;
+}
+.home-page .agenda-demo-cta{
+  border-radius:999px;
+  background:#241f1d;
+  color:#fff;
+  text-align:center;
+  padding:11px 10px;
+  font-size:9px;
+  letter-spacing:.16em;
+  font-weight:750;
+}
+@media (max-width:640px){
+  .home-page .agenda-demo-visual{padding:26px;}
+  .home-page .agenda-demo-device{width:min(68%,280px);}
+}
