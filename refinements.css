@@ -522,3 +522,17 @@
   .home-page .agenda-demo-visual{padding:26px;}
   .home-page .agenda-demo-device{width:min(68%,280px);}
 }
+
+/* Emphasize solution category labels */
+.home-page .solution-card-copy > .kicker{
+  font-size:14px;
+  line-height:1.25;
+  letter-spacing:.14em;
+  font-weight:750;
+}
+@media(max-width:640px){
+  .home-page .solution-card-copy > .kicker{
+    font-size:12px;
+    letter-spacing:.12em;
+  }
+}
