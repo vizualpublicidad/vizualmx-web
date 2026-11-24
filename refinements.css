@@ -688,3 +688,20 @@
   .about-vizual-portrait-placeholder{min-height:280px;padding:24px}
   .legal-content{padding-top:42px}
 }
+
+/* Footer vertical alignment */
+@media(min-width:641px){
+  .business-page footer > p,
+  .business-page footer > a:not(.brand),
+  .business-page footer > .footer-socials,
+  .business-page footer > .background-toggle{
+    align-self:center;
+  }
+  .business-page footer > p,
+  .business-page footer > a:not(.brand){
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    line-height:1.2;
+  }
+}
