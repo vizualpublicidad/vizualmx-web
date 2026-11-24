@@ -574,3 +574,75 @@
     font-size:13px;
   }
 }
+
+/* === Home commercial hierarchy: Clinics first === */
+.home-page .solutions-heading{max-width:920px}
+.home-page .solutions-heading p{margin-top:18px;max-width:760px}
+@media(min-width:981px){
+  .home-page .solution-grid-priority{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:stretch;
+  }
+  .home-page .solution-card-featured{
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:1.18fr .82fr;
+    min-height:470px;
+    border-color:rgba(118,188,235,.56);
+    box-shadow:0 24px 70px rgba(26,119,176,.10);
+  }
+  .home-page .solution-card-featured .solution-media{
+    border-bottom:0;
+    border-right:1px solid #61bfff30;
+    aspect-ratio:auto;
+    min-height:470px;
+  }
+  .home-page .solution-card-featured .solution-card-copy{
+    padding:44px 38px;
+    justify-content:center;
+  }
+  .home-page .solution-card-featured .solution-card-copy h3{
+    font-size:34px;
+    line-height:1.08;
+  }
+  .home-page .solution-card-agenda{
+    border-color:rgba(118,188,235,.34);
+  }
+  .home-page .solution-card-secondary{
+    opacity:.93;
+  }
+}
+.home-page .solution-badge{
+  margin-left:auto;
+  margin-right:12px;
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:7px 11px;
+  border-radius:999px;
+  border:1px solid rgba(118,188,235,.45);
+  background:rgba(7,16,24,.76);
+  color:#9fdcff;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.13em;
+  white-space:nowrap;
+  backdrop-filter:blur(10px);
+}
+.home-page .solution-badge-agenda{
+  color:#081018;
+  background:#9fdbff;
+  border-color:#9fdbff;
+  box-shadow:0 8px 22px rgba(90,185,240,.18);
+}
+@media(max-width:980px){
+  .home-page .solution-card-featured{border-color:rgba(118,188,235,.46)}
+}
+@media(max-width:640px){
+  .home-page .solution-badge{
+    font-size:8px;
+    padding:6px 9px;
+    margin-right:8px;
+    letter-spacing:.1em;
+  }
+}
