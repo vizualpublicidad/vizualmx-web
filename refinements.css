@@ -285,14 +285,14 @@
 
 /* Ambient motion stays behind content and never intercepts input. */
 .tech-background { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: -1; contain: strict; }
-.tech-orbit { position: absolute; width: min(70vw, 880px); aspect-ratio: 1; border: 1px solid #309ee72e; border-radius: 50%; animation: tech-orbit 90s linear infinite; }
+.tech-orbit { position: absolute; width: min(70vw, 880px); aspect-ratio: 1; border: 1px solid #309ee72e; border-radius: 50%; animation: tech-orbit 48s linear infinite; }
 .tech-orbit::before { content: ""; position: absolute; inset: 12%; border: 1px dashed #47bbec22; border-radius: 50%; }
 .tech-orbit::after { content: ""; position: absolute; top: 14%; left: 14%; width: 5px; height: 5px; background: #68d2ff99; border-radius: 50%; box-shadow: 0 0 14px 4px #229fe844; }
 .tech-orbit-one { top: -18%; right: -20%; }
-.tech-orbit-two { bottom: -35%; left: -24%; animation-direction: reverse; animation-duration: 120s; }
-.tech-particle { position: absolute; left: var(--x); top: var(--y); width: 3px; height: 3px; border-radius: 50%; background: #61c9f5; box-shadow: 0 0 10px #169de888; opacity: .25; animation: tech-drift var(--duration) ease-in-out var(--delay) infinite alternate; }
+.tech-orbit-two { bottom: -35%; left: -24%; animation-direction: reverse; animation-duration: 72s; }
+.tech-particle { position: absolute; left: var(--x); top: var(--y); width: 3px; height: 3px; border-radius: 50%; background: #61c9f5; box-shadow: 0 0 10px #169de888; opacity: .25; animation: tech-drift 18s ease-in-out var(--delay) infinite alternate; }
 @keyframes tech-orbit { to { transform: rotate(360deg); } }
-@keyframes tech-drift { from { transform: translate3d(-8px,18px,0); opacity: .15; } to { transform: translate3d(16px,-28px,0); opacity: .5; } }
+@keyframes tech-drift { from { transform: translate3d(-14px,28px,0); opacity: .16; } to { transform: translate3d(26px,-44px,0); opacity: .58; } }
 .background-toggle { background: transparent; border: 1px solid #69b9e42b; border-radius: 999px; padding: 10px 14px; color: #a5b5c5; font-size: 12px; cursor: pointer; min-height: 44px; }
 .background-toggle:hover { color: #8dd9ff; border-color: #69b9e477; }
 .background-toggle:focus-visible { outline: 2px solid #69c9f4; outline-offset: 4px; }
