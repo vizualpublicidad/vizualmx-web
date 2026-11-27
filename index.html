@@ -27,6 +27,43 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://vizualmx.com/#organization", "name": "VIZUAL Business Solutions", "url": "https://vizualmx.com/", "email": "contacto@vizualmx.com", "telephone": "+526861992711", "logo": "https://vizualmx.com/assets/vizual-business-solutions.png"}, {"@type": "WebSite", "@id": "https://vizualmx.com/#website", "url": "https://vizualmx.com/", "name": "VIZUAL Business Solutions", "publisher": {"@id": "https://vizualmx.com/#organization"}, "inLanguage": "es-MX"}, {"@type": "WebPage", "@id": "https://vizualmx.com/#webpage", "url": "https://vizualmx.com/", "name": "Sistemas para clínicas y empresas en México | VIZUAL", "description": "Sistemas, Clínicas, Agenda Digital y Marca y Web para mejorar operación, presencia y captación de clientes.", "isPartOf": {"@id": "https://vizualmx.com/#website"}, "inLanguage": "es-MX"}]}</script>
 <script defer src="analytics.js?v=2">
 </script>
+<style>
+/* Isolated preview: only the hero's right-hand experience. */
+.eco-stage{--ex:50%;--ey:50%;position:relative;min-width:0;isolation:isolate;padding:20px;border:1px solid #57baff45;border-radius:28px;background:radial-gradient(ellipse at var(--ex) var(--ey),#174c7138,transparent 65%),linear-gradient(145deg,#0d1725,#080d16);box-shadow:0 0 60px #0b7cb51e;color:#edf7ff;overflow:hidden}
+.eco-top,.eco-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;color:#9ab9ca;font-size:10px;letter-spacing:.14em}
+.eco-top i{display:inline-block;width:6px;height:6px;background:#7cddff;border-radius:50%;box-shadow:0 0 10px #6fcfff;margin-right:6px}
+.eco-map{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr auto 1fr;align-items:center;justify-items:center;gap:15px 18px;height:clamp(270px,26vw,340px);padding:14px 0;isolation:isolate}
+.eco-ambient{position:absolute;inset:0;background:radial-gradient(ellipse at var(--ex) var(--ey),#2d9ee02a,transparent 52%);pointer-events:none}
+.eco-network{position:absolute;width:100%;height:100%;inset:0;pointer-events:none;z-index:-1;overflow:visible}
+.eco-orbit{fill:none;stroke:#72caff38;stroke-width:1;stroke-dasharray:3 7;animation:eco-dash 15s linear infinite}
+.eco-orbit-inner{stroke:#72caff20;stroke-dasharray:1 6;animation-direction:reverse}
+.eco-wires path,.eco-signals path{fill:none;stroke:#74caff55;stroke-width:1.4;vector-effect:non-scaling-stroke}
+.eco-signals path{stroke:#a6e9ff;stroke-width:2;stroke-dasharray:8 95;animation:eco-dash 5s linear infinite;opacity:.22}
+.eco-signals path.is-active{opacity:1;stroke:#73deff;filter:drop-shadow(0 0 4px #49c8ff)}
+.eco-stars{fill:#9bdeff;animation:eco-pulse 3s ease-in-out infinite alternate}
+@keyframes eco-dash{to{stroke-dashoffset:-206}}
+@keyframes eco-pulse{from{opacity:.35}to{opacity:1}}
+.eco-core{grid-column:1/-1;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:min(82%,340px);padding:19px 14px;border:1px solid #80caff3d;border-radius:20px;background:radial-gradient(ellipse,#153450,#0a1422 80%);box-shadow:0 0 36px #3abaff25}
+.eco-core img{display:block;width:90%;max-width:285px;height:auto;object-fit:contain}
+.eco-core span{font-size:8px;letter-spacing:.13em;text-align:center;color:#accbdf}
+.eco-node{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;gap:9px;width:min(100%,205px);min-width:0;min-height:58px;padding:12px 9px;border:1px solid #60b8ee48;border-radius:15px;color:#d7eafb;background:#0c1a2be8;font:inherit;font-weight:650;font-size:13px;cursor:pointer;transition:border-color .22s,box-shadow .22s,background .22s}
+.eco-node svg{width:21px;height:21px;flex-shrink:0;fill:none;stroke:#91daff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.eco-node:hover,.eco-node[aria-pressed="true"]{background:#14314b;border-color:#75d9ff;box-shadow:0 0 24px #29baff35;color:#fff}
+.eco-detail{display:grid;grid-template-columns:1fr;gap:14px;border-top:1px solid #60b8ee32;background:#080f1a90;border-radius:15px;padding:18px;min-height:162px}
+.eco-detail .eco-kicker{font-size:10px;letter-spacing:.11em;color:#91dbff}
+.eco-detail h2{font-size:22px;line-height:1.15;margin:8px 0;color:#f0f8ff;letter-spacing:-.03em}
+.eco-detail p{font-size:13px;line-height:1.5;margin:0;color:#b8c8d8}
+.eco-detail a{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;justify-self:start;padding:10px 14px;min-height:44px;border-radius:999px;border:1px solid #63c7ff80;background:#13314c;color:#e9f8ff;font-size:12px;font-weight:650}
+.eco-detail a:hover{background:#a0dfff;color:#081321}
+.eco-bottom{margin-top:16px;letter-spacing:.04em}
+.eco-bottom span{color:#84dfff}
+.eco-fallback{font-size:12px;margin-top:10px}
+@media(max-width:980px){.eco-stage{width:100%;max-width:760px;margin:12px auto 0}.eco-map{height:310px}}
+@media(max-width:640px){.eco-stage{padding:14px;border-radius:22px}.eco-top{font-size:9px}.eco-map{height:270px;gap:10px;padding:12px 0}.eco-node{font-size:11px;gap:6px;min-height:52px;padding:8px 5px}.eco-node svg{width:18px;height:18px}.eco-core{width:90%;padding:16px 8px}.eco-core span{font-size:7px}.eco-detail{padding:14px;min-height:180px}.eco-detail h2{font-size:20px}}
+.background-paused .eco-stage *, .background-inactive .eco-stage *{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.eco-stage *{animation:none!important;transition:none!important}}
+</style>
+<meta name="robots" content="noindex, nofollow">
 </head>
 <body class="business-page home-page">
 <div class="tech-background" aria-hidden="true"><div class="tech-orbit tech-orbit-one"></div><div class="tech-orbit tech-orbit-two"></div><i class="tech-particle" style="--x:7%;--y:18%;--delay:-0s;--duration:24s"></i><i class="tech-particle" style="--x:19%;--y:67%;--delay:-3s;--duration:30s"></i><i class="tech-particle" style="--x:31%;--y:35%;--delay:-6s;--duration:36s"></i><i class="tech-particle" style="--x:45%;--y:86%;--delay:-9s;--duration:42s"></i><i class="tech-particle" style="--x:58%;--y:14%;--delay:-12s;--duration:24s"></i><i class="tech-particle" style="--x:69%;--y:57%;--delay:-15s;--duration:30s"></i><i class="tech-particle" style="--x:82%;--y:27%;--delay:-18s;--duration:36s"></i><i class="tech-particle" style="--x:94%;--y:76%;--delay:-21s;--duration:42s"></i><i class="tech-particle" style="--x:12%;--y:92%;--delay:-24s;--duration:24s"></i><i class="tech-particle" style="--x:54%;--y:48%;--delay:-27s;--duration:30s"></i><i class="tech-particle" style="--x:76%;--y:91%;--delay:-30s;--duration:36s"></i><i class="tech-particle" style="--x:90%;--y:8%;--delay:-33s;--duration:42s"></i></div>
@@ -70,12 +107,32 @@
 </div>
 </div>
 <!-- Official brand reveal, muted for inline autoplay on mobile. -->
-<figure class="hero-brand-stage" aria-label="Animación de VIZUAL Business Solutions">
-<video autoplay loop muted playsinline disablepictureinpicture disableremoteplayback preload="metadata" poster="assets/vizual-business-solutions.png" aria-label="Animación del logo VIZUAL Business Solutions">
-<source src="assets/hero/vizual-business-reveal.mp4" type="video/mp4">
-Tu navegador no puede reproducir este video. <a href="assets/hero/vizual-business-reveal.mp4">Ver animación del logo</a>.
-</video>
-</figure>
+<div class="eco-stage" id="eco-stage" aria-label="Explora el ecosistema VIZUAL">
+  <div class="eco-top"><span><i></i> ECOSISTEMA VIZUAL</span><span>01 — 04</span></div>
+  <div class="eco-map">
+    <div class="eco-ambient" aria-hidden="true"></div>
+    <svg class="eco-network" viewBox="0 0 600 340" preserveAspectRatio="none" aria-hidden="true">
+      <defs><radialGradient id="eco-ring"><stop stop-color="#61cfff" stop-opacity=".16"/><stop offset="1" stop-color="#61cfff" stop-opacity="0"/></radialGradient></defs>
+      <ellipse cx="300" cy="170" rx="136" ry="105" fill="url(#eco-ring)"/>
+      <ellipse class="eco-orbit" cx="300" cy="170" rx="198" ry="139"/>
+      <ellipse class="eco-orbit eco-orbit-inner" cx="300" cy="170" rx="134" ry="100"/>
+      <g class="eco-wires"><path d="M150 53 C150 116 300 72 300 170"/><path d="M450 53 C450 116 300 72 300 170"/><path d="M150 287 C150 224 300 268 300 170"/><path d="M450 287 C450 224 300 268 300 170"/></g>
+      <g class="eco-signals"><path data-wire="0" d="M150 53 C150 116 300 72 300 170"/><path data-wire="1" d="M450 53 C450 116 300 72 300 170"/><path data-wire="2" d="M150 287 C150 224 300 268 300 170"/><path data-wire="3" d="M450 287 C450 224 300 268 300 170"/></g>
+      <g class="eco-stars"><circle cx="45" cy="107" r="2"/><circle cx="555" cy="111" r="2"/><circle cx="62" cy="260" r="1.8"/><circle cx="536" cy="235" r="2"/><circle cx="268" cy="32" r="1.5"/><circle cx="343" cy="313" r="1.5"/></g>
+    </svg>
+    <button class="eco-node" data-eco="0" type="button" aria-pressed="true" aria-controls="eco-detail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12h8m-4-4v8"/></svg><span>Clínicas</span></button>
+    <button class="eco-node" data-eco="1" type="button" aria-pressed="false" aria-controls="eco-detail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 10h18m5-5"/></svg><span>Agenda Digital</span></button>
+    <div class="eco-core"><img src="assets/vizual-business-solutions.png" alt="VIZUAL Business Solutions" width="1200" height="226"><span>MARCA · TECNOLOGÍA · CRECIMIENTO</span></div>
+    <button class="eco-node" data-eco="2" type="button" aria-pressed="false" aria-controls="eco-detail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 17.5h7m-3.5-3.5v7"/></svg><span>Sistemas</span></button>
+    <button class="eco-node" data-eco="3" type="button" aria-pressed="false" aria-controls="eco-detail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18m-12 5 2 2-2 2m6-4 2 2-2 2"/></svg><span>Marca y Web</span></button>
+  </div>
+  <div class="eco-detail" id="eco-detail">
+    <div aria-live="polite" aria-atomic="true"><span class="eco-kicker" id="eco-kicker">01 / SISTEMA PARA CLÍNICAS</span><h2 id="eco-title">Tu clínica, conectada.</h2><p id="eco-description">App para pacientes y dashboard para organizar citas, agenda y comunicación.</p></div>
+    <a href="/sistema-para-clinicas" id="eco-link">Conocer solución <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="eco-bottom">Selecciona una solución para explorarla <span aria-hidden="true">✦</span></div>
+  <noscript><div class="eco-fallback"><a href="/agenda-digital">Agenda Digital</a> · <a href="/operaciones">Sistemas</a> · <a href="/business-experience">Marca y Web</a></div></noscript>
+</div>
 </section>
 
 <section class="ticker business-ticker" aria-label="Soluciones de VIZUAL Business Solutions">
@@ -298,6 +355,26 @@ Tu navegador no puede reproducir este video. <a href="assets/hero/vizual-busines
 <span>Hablemos</span>
 </a>
 <script src="script.js?v=business-5">
+</script>
+<script>
+(() => {
+ const stage=document.getElementById('eco-stage');if(!stage)return;
+ const data=[
+ ['01 / SISTEMA PARA CLÍNICAS','Tu clínica, conectada.','App para pacientes y dashboard para organizar citas, agenda y comunicación.','/sistema-para-clinicas'],
+ ['02 / AGENDA DIGITAL','Un solo pago. Sin mensualidades.','Presenta tus servicios y facilita la solicitud de citas con una agenda personalizada.','/agenda-digital'],
+ ['03 / SISTEMAS','Menos archivos. Más control.','Centraliza clientes, ventas y proyectos en un sistema a la medida.','/operaciones'],
+ ['04 / MARCA Y WEB','Una presencia a tu nivel.','Branding, sitio web y presencia digital para proyectar lo que tu negocio ofrece.','/business-experience']
+ ];
+ const buttons=[...stage.querySelectorAll('[data-eco]')],wires=[...stage.querySelectorAll('[data-wire]')];
+ const fields=['eco-kicker','eco-title','eco-description'].map(id=>document.getElementById(id));
+ const link=document.getElementById('eco-link');
+ const select=i=>{const d=data[i];if(!d)return;buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));wires.forEach((w,j)=>w.classList.toggle('is-active',i===j));fields.forEach((el,j)=>{el.textContent=d[j]});link.href=d[3]};
+ buttons.forEach((b,i)=>b.addEventListener('click',()=>select(i)));
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ stage.addEventListener('pointermove',e=>{if(reduced.matches||document.body.classList.contains('background-paused'))return;const r=stage.getBoundingClientRect();stage.style.setProperty('--ex',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');stage.style.setProperty('--ey',((e.clientY-r.top)/r.height*100).toFixed(1)+'%')},{passive:true});
+ stage.addEventListener('pointerleave',()=>{stage.style.setProperty('--ex','50%');stage.style.setProperty('--ey','50%')});
+ select(0);
+})();
 </script>
 </body>
 </html>
